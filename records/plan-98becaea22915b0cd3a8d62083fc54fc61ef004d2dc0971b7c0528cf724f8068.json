@@ -1,0 +1,45 @@
+{
+  "id": "plan-98becaea22915b0cd3a8d62083fc54fc61ef004d2dc0971b7c0528cf724f8068",
+  "title": "2022.교내수업공개계획(탑재용)",
+  "grades": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "수업 보조자료",
+  "classificationNotes": [
+    "학교·유치원의 수업 공개 운영 계획입니다. 개별 지도안과 구분하여 보조자료로 분류했습니다.",
+    "원 게시물 등록일: 2022.03.30."
+  ],
+  "subject": "기타",
+  "unit": "교내 수업 공개·연구 운영 계획",
+  "normalizedUnit": "교내수업공개·연구운영계획",
+  "lessonNumber": "",
+  "topic": "",
+  "objectives": [],
+  "standards": [],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "놀이 주제"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2022.교내수업공개계획(탑재용).hwp",
+  "filePath": "plans/98becaea22915b0cd3a8d62083fc54fc61ef004d2dc0971b7c0528cf724f8068.hwp",
+  "fileSize": 98304,
+  "sha256": "98becaea22915b0cd3a8d62083fc54fc61ef004d2dc0971b7c0528cf724f8068",
+  "previewText": "",
+  "author": "박지현",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1783453",
+  "publishedAt": "2026-10-11T04:03:17.355Z",
+  "status": "approved"
+}

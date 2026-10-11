@@ -1,0 +1,44 @@
+{
+  "id": "plan-3e4b4e6c97ce37fdeaf68378e4a0badb31421039c300f9fb2861816e1ba7b325",
+  "title": "2022.좋은수업-쌍봉초등학교-김순오(2차-1학년슬생)",
+  "grades": [
+    1
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "원 게시물 등록일: 2022.11.03."
+  ],
+  "subject": "통합교과",
+  "unit": "1. 내 이웃 이야기",
+  "normalizedUnit": "1.내이웃이야기",
+  "lessonNumber": "31/40",
+  "topic": "소리를 듣고 이웃집에서 일어난 일 표현하기",
+  "objectives": [],
+  "standards": [
+    "[2바05-01]",
+    "[2슬05-01]",
+    "[2슬05-02]",
+    "[2즐05-01]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2022.좋은수업-쌍봉초등학교-김순오(2차-1학년슬생).hwp",
+  "filePath": "plans/3e4b4e6c97ce37fdeaf68378e4a0badb31421039c300f9fb2861816e1ba7b325.hwp",
+  "fileSize": 79872,
+  "sha256": "3e4b4e6c97ce37fdeaf68378e4a0badb31421039c300f9fb2861816e1ba7b325",
+  "previewText": "",
+  "author": "김순오",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1815242",
+  "publishedAt": "2026-10-11T03:55:58.785Z",
+  "status": "approved"
+}

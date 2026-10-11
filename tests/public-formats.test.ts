@@ -1,7 +1,7 @@
 import {webcrypto} from 'node:crypto';
 import {beforeAll,describe,it,expect,vi} from 'vitest';
 import {analyzeFile} from '../src/lib/parsers/analyze';
-import {PlanSchema} from '../shared/schema.mjs';
+import {PlanSchema,LIMITS} from '../shared/schema.mjs';
 import {searchPlans} from '../src/lib/search';
 import {createSubmission} from '../src/lib/submission';
 import {unpackSubmission} from '../scripts/lib.mjs';
@@ -9,6 +9,12 @@ import {recordFixture,hwpxFixture} from './fixtures.mjs';
 beforeAll(()=>vi.stubGlobal('crypto',webcrypto));
 const filter={query:'',grade:'',subject:'',unit:'',sort:'latest'};
 describe('public PDF and kindergarten catalog',()=>{
+ it('accepts a real-size 29MiB HWP without raising batch or ZIP expansion limits',async()=>{
+  const old=recordFixture(await hwpxFixture());
+  expect(PlanSchema.safeParse({...old,fileSize:30490624}).success).toBe(true);
+  expect(PlanSchema.safeParse({...old,fileSize:LIMITS.file+1}).success).toBe(false);
+  expect(LIMITS.batch).toBe(100*1024**2);expect(LIMITS.expanded).toBe(160*1024**2);
+ });
  it('preserves PDF bytes through browser draft, ZIP and administrator import',async()=>{
   const bytes=new TextEncoder().encode('%PDF-1.7\n% test signature fixture only\n%%EOF');
   const file={name:'3학년_국어.pdf',size:bytes.length,arrayBuffer:async()=>bytes.buffer}as File;

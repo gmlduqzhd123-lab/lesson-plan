@@ -1,0 +1,40 @@
+{
+  "id": "plan-43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43",
+  "title": "2022학년도도원초수업공개관련서식",
+  "grades": [
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "수업 보조자료",
+  "classificationNotes": [
+    "실제 대상 학년을 확인해 본문의 선수학습·그림책 수준에서 언급한 유치원과 구분했습니다.",
+    "수업 내용이 빈 서식과 예시 표지입니다. 완성된 개별 지도안 대신 수업 보조자료로 분류했습니다."
+  ],
+  "subject": "기타",
+  "unit": "교내 수업 공개 관련 서식",
+  "normalizedUnit": "교내수업공개관련서식",
+  "lessonNumber": "7/9",
+  "topic": "교수학습과정안·참관 기록 서식",
+  "objectives": [],
+  "standards": [],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "놀이 주제"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2022학년도도원초수업공개관련서식.hwp",
+  "filePath": "plans/43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43.hwp",
+  "fileSize": 143872,
+  "sha256": "43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43",
+  "previewText": "",
+  "author": "정금자",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1783138",
+  "publishedAt": "2026-10-11T04:03:29.066Z",
+  "status": "approved"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "plan-091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5",
+  "title": "씽킹맵학습지(버블맵)",
+  "grades": [
+    3
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "수업 보조자료",
+  "classificationNotes": [
+    "같은 게시물의 지도안과 함께 제공된 자료입니다. 명시 정보가 없는 분류는 해당 지도안에서 확인했습니다.",
+    "원 게시물 등록일: 2022.05.03."
+  ],
+  "subject": "국어",
+  "unit": "5. 중요한 내용을 적어요",
+  "normalizedUnit": "5.중요한내용을적어요",
+  "lessonNumber": "",
+  "topic": "내용을 간추리며 듣기",
+  "objectives": [],
+  "standards": [
+    "[4국01-05]",
+    "[4국02-02]",
+    "[4국04-02]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "씽킹맵학습지(버블맵).hwp",
+  "filePath": "plans/091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5.hwp",
+  "fileSize": 15360,
+  "sha256": "091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5",
+  "previewText": "",
+  "author": "허윤범",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1788741",
+  "publishedAt": "2026-10-11T04:01:12.961Z",
+  "status": "approved"
+}

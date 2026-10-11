@@ -1,0 +1,45 @@
+{
+  "id": "plan-35bd2ee6d77c01b4fad2c4954b2a2b12c5998d277f4fa06bddac8d0b0c5fd2ec",
+  "title": "좋은수업교수학습과정안(홍하얀-1차)",
+  "grades": [
+    2
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "원 게시물 등록일: 2022.05.09."
+  ],
+  "subject": "통합교과",
+  "unit": "2. 봄이 오면",
+  "normalizedUnit": "2.봄이오면",
+  "lessonNumber": "39/40",
+  "topic": "봄이 오면 안녕",
+  "objectives": [],
+  "standards": [
+    "[2바02-01]",
+    "[2슬02-01]",
+    "[2슬02-02]",
+    "[2즐02-01]",
+    "[2즐02-02]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "좋은수업교수학습과정안(홍하얀-1차).hwp",
+  "filePath": "plans/35bd2ee6d77c01b4fad2c4954b2a2b12c5998d277f4fa06bddac8d0b0c5fd2ec.hwp",
+  "fileSize": 91648,
+  "sha256": "35bd2ee6d77c01b4fad2c4954b2a2b12c5998d277f4fa06bddac8d0b0c5fd2ec",
+  "previewText": "",
+  "author": "홍하얀",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1789465",
+  "publishedAt": "2026-10-11T04:00:52.944Z",
+  "status": "approved"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "plan-ecc97832437f50633ea9054ad882b4868e188d67a3c45651caf2102e06c2dfc9",
+  "title": "2022학년도좋은수업2차공개(여수중앙_김유라) (공개용 PDF)",
+  "grades": [
+    2
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "민감 문단·학생 식별 정보와 포함된 학생 사진을 삭제한 공개용 텍스트 PDF입니다. 원본의 표·그림 배치를 재현하지 않았으며 원본은 비공개로 보관합니다.",
+    "원 게시물 등록일: 2022.06.29.",
+    "민감 문단·학생 식별 정보·학생 사진을 삭제한 공개용 PDF입니다. 원본은 비공개로 보관합니다. 추출한 텍스트를 재배치하여 표·그림은 원문과 다를 수 있습니다."
+  ],
+  "subject": "수학",
+  "unit": "9. 물건 사기",
+  "normalizedUnit": "9.물건사기",
+  "lessonNumber": "",
+  "topic": "여러 가지 돈으로 필요한 물건 구입하기",
+  "objectives": [],
+  "standards": [],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2022년 게시",
+    "단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "공개용_2022학년도좋은수업2차공개(여수중앙_김유라).pdf",
+  "filePath": "plans/ecc97832437f50633ea9054ad882b4868e188d67a3c45651caf2102e06c2dfc9.pdf",
+  "fileSize": 109227,
+  "sha256": "ecc97832437f50633ea9054ad882b4868e188d67a3c45651caf2102e06c2dfc9",
+  "previewText": "",
+  "author": "김유라",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1799285",
+  "publishedAt": "2026-10-11T03:58:08.597Z",
+  "status": "approved"
+}

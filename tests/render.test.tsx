@@ -1,12 +1,26 @@
 import { afterEach, expect, it, vi } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Home from '../src/pages/Home';
 import LibraryPage from '../src/pages/LibraryPage';
 import Upload from '../src/pages/Upload';
+import { recordFixture } from './fixtures.mjs';
+import type { Plan } from '../src/types';
 afterEach(cleanup);
 const props = { plans: [], loading: false, error: '', retry: vi.fn() };
 it('renders honest zero-data home with functional navigation', () => { render(<MemoryRouter><Home {...props} /></MemoryRouter>); expect(screen.getByRole('heading', { level: 1 }).textContent).toContain('선생님의 수업 준비'); expect(screen.getByText('첫 번째 수업 자료를 기다리고 있어요')).toBeTruthy(); expect(screen.getAllByRole('link').some(a => a.getAttribute('href') === '/library?grade=5')).toBe(true); });
 it('renders filters, sorting and empty state', () => { render(<MemoryRouter><LibraryPage {...props} /></MemoryRouter>); expect(screen.getByLabelText('학년')).toBeTruthy(); expect(screen.getByLabelText('교과')).toBeTruthy(); expect(screen.getByLabelText('단원')).toBeTruthy(); expect(screen.getByLabelText('정렬')).toBeTruthy(); });
 it('renders load and failure states independently', () => { const { rerender } = render(<MemoryRouter><LibraryPage {...props} loading /></MemoryRouter>); expect(screen.getByRole('status')).toBeTruthy(); rerender(<MemoryRouter><LibraryPage {...props} error="network failure" /></MemoryRouter>); expect(screen.getByRole('alert').textContent).toContain('network failure'); });
 it('renders browser-local upload boundary and HWP limitations', () => { render(<Upload publishedPlans={[]} />); expect(screen.getByText('파일은 선생님의 기기 안에서만 처리됩니다.')).toBeTruthy(); expect(screen.getByLabelText('지도안 파일 선택')).toBeTruthy(); expect(screen.queryByText('등록 완료')).toBeNull(); });
+it('searches the full catalog beyond visible cards and resets incremental display on filters', () => {
+  const plans = Array.from({ length: 125 }, (_, i) => ({ ...recordFixture(new Uint8Array([i])), title: `자료 ${i}`, grades: [i === 124 ? 6 : 5], publishedAt: '2026-10-11T00:00:00Z' })) as Plan[];
+  const { container } = render(<MemoryRouter><LibraryPage {...props} plans={plans} /></MemoryRouter>);
+  expect(container.querySelectorAll('.plan-card')).toHaveLength(60);
+  fireEvent.click(screen.getByRole('button', { name: '자료 더 보기' }));
+  expect(container.querySelectorAll('.plan-card')).toHaveLength(120);
+  fireEvent.change(screen.getByLabelText('학년'), { target: { value: '6' } });
+  expect(container.querySelectorAll('.plan-card')).toHaveLength(1);
+  expect(screen.getByRole('heading', { name: '자료 124' })).toBeTruthy();
+  fireEvent.change(screen.getByLabelText('학년'), { target: { value: '' } });
+  expect(container.querySelectorAll('.plan-card')).toHaveLength(60);
+});

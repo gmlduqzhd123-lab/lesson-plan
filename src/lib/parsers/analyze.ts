@@ -10,7 +10,7 @@ export async function hashFile(file: File) {
 export async function analyzeFile(file: File): Promise<Pick<Draft, 'plan' | 'confidence' | 'evidence' | 'warning'>> {
   const ext = file.name.split('.').pop()?.toLowerCase();
   if (!['hwp', 'hwpx', 'pdf'].includes(ext ?? '')) throw new Error('HWP, HWPX, PDF 파일만 선택할 수 있습니다.');
-  if (!file.size || file.size > LIMITS.file) throw new Error('빈 파일이거나 파일당 20MiB 제한을 초과했습니다.');
+  if (!file.size || file.size > LIMITS.file) throw new Error(`빈 파일이거나 파일당 ${LIMITS.file / 1024 ** 2}MiB 제한을 초과했습니다.`);
   const format = ext === 'pdf' ? 'PDF' : ext === 'hwpx' ? 'HWPX' : 'HWP';
   const bytes = new Uint8Array(await file.arrayBuffer());
   validateSignature(bytes, format);

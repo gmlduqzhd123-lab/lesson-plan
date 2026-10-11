@@ -1,0 +1,44 @@
+{
+  "id": "plan-0b6e0403ea0e245b98efbd2c7bdd6a87a3ddd391de79a87b60be9c348f89baec",
+  "title": "2023좋은수업-신기초-이동헌(2차-5학년과학)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "원 게시물 등록일: 2023.10.12."
+  ],
+  "subject": "과학",
+  "unit": "5-2-3. 날씨와 우리 생활",
+  "normalizedUnit": "5-2-3.날씨와우리생활",
+  "lessonNumber": "5/13",
+  "topic": "이슬, 안개, 구름은 어떻게 만들어질까요?",
+  "objectives": [],
+  "standards": [
+    "[6과06-01]",
+    "[6과06-02]",
+    "[6과06-03]",
+    "[6과06-04]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2023년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2023좋은수업-신기초-이동헌(2차-5학년과학).hwp",
+  "filePath": "plans/0b6e0403ea0e245b98efbd2c7bdd6a87a3ddd391de79a87b60be9c348f89baec.hwp",
+  "fileSize": 64512,
+  "sha256": "0b6e0403ea0e245b98efbd2c7bdd6a87a3ddd391de79a87b60be9c348f89baec",
+  "previewText": "",
+  "author": "이동헌",
+  "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1861849",
+  "publishedAt": "2026-10-11T03:55:28.862Z",
+  "status": "approved"
+}
