@@ -17,6 +17,11 @@ try {
   const page = await context.newPage();
   page.on('pageerror', e => report.consoleErrors.push(e.message));
   page.on('requestfailed', r => report.failedRequests.push({ url: r.url(), error: r.failure()?.errorText }));
+  await page.goto(origin); await page.getByRole('heading', { level: 1 }).waitFor();
+  await page.keyboard.press('Tab'); await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'main-content');
+  assert.equal(await page.evaluate(() => location.hash.includes('main-content')), false);
+  check('keyboard skip link focuses main without changing HashRouter route');
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }, { width: 320, height: 568 }]) {
     await page.setViewportSize(viewport); await page.goto(origin); await page.getByText('첫 번째 수업 자료를 기다리고 있어요').waitFor(); await page.evaluate(() => document.fonts.ready);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'horizontal overflow');

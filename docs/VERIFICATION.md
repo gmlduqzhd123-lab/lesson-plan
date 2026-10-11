@@ -35,4 +35,13 @@ Windows의 설치된 Microsoft Edge를 Playwright로 실행하고, Vite 프로�
 - 자동 개인정보 탐지·자동 저작권 판정: 구현하지 않음, 사람의 원본·미리보기 검토 필요
 - 실제 관리자에게 ZIP 전달: 별도 전달이 필요하며 자동 전송 기능 없음
 
-GitHub 커밋·push·Actions·라이브 URL 검증 결과는 실제 원격 반영 후 별도로 기록합니다.
+## 실제 GitHub 반영 및 배포
+
+- 기존 `gmlduqzhd123-lab/lesson-plan` 저장소가 빈 상태임을 확인했습니다. 다른 저장소는 수정하지 않았습니다.
+- 터미널 Git push는 인증 부재로 실패했습니다. 연결된 GitHub 계정으로 파일 blob·tree·commit·ref를 반영했고 강제 갱신은 사용하지 않았습니다.
+- 초기 개발 커밋: `592067fe458be7619f6d9fc05d2de412653fbd11`. 원격 전체 Git tree와 로컬 검증본이 일치하며 로컬 main을 원격과 동기화했습니다.
+- Pages Source를 브라우저에서 GitHub Actions로 설정하고 저장 완료 메시지를 확인했습니다.
+- [초기 Actions 실행](https://github.com/gmlduqzhd123-lab/lesson-plan/actions/runs/38104555222): build와 deploy 모두 success. GitHub Ubuntu/Node 24 환경에서 타입 검사, 프런트 28개·관리자 7개 테스트와 빌드가 통과했습니다.
+- [공개 사이트](https://gmlduqzhd123-lab.github.io/lesson-plan/): HTTP 200, 공개 catalog·favicon·JS·CSS의 SHA-256이 로컬 dist와 일치했습니다.
+- 실제 공개 URL에서도 위 브라우저 21개 항목을 실행해 통과했습니다. 검색·상세·원본 다운로드는 샘플 응답 대체 검증이며, 분석과 ZIP 생성은 실제 배포된 코드로 실행했습니다. 원본 파일은 외부에 업로드하지 않았습니다.
+- 마지막 접근성 검수에서 키보드 본문 이동이 SPA 해시 경로를 바꾸지 않도록 수정했고, 브라우저 검증에 해당 항목을 추가했습니다. 최종 코드의 Actions 및 브라우저 결과는 작업 완료 보고에서 구분해 안내합니다.
