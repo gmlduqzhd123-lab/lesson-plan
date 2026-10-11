@@ -17,6 +17,34 @@ async function sandbox(t) {
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   return { root, run: (name, ...args) => spawnSync(process.execPath, [path.join(root, 'scripts', name), ...args], { cwd: root, encoding: 'utf8' }) };
 }
+
+for (const relative of ['records', 'public/catalog']) test(`rejects directory links at ${relative} without writing outside the repository`, async t => {
+  const { root, run } = await sandbox(t);
+  const outside = await fs.mkdtemp(path.join(ROOT, '.tmp', 'outside-'));
+  t.after(() => fs.rm(outside, { recursive: true, force: true }));
+  const marker = relative === 'records' ? 'marker.txt' : 'index.json';
+  await fs.writeFile(path.join(outside, marker), 'protected');
+  const target = path.join(root, relative);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  if (relative === 'records') await fs.rmdir(target);
+  await fs.symlink(outside, target, process.platform === 'win32' ? 'junction' : 'dir');
+  assert.notEqual(run('build-catalog.mjs').status, 0);
+  assert.equal(await fs.readFile(path.join(outside, marker), 'utf8'), 'protected');
+});
+
+test('approval audit output link rejects publication and rolls back candidate files', async t => {
+  const { root, run } = await sandbox(t);
+  const fixture = await submissionFixture();
+  const input = path.join(root, 'input.zip'); await fs.writeFile(input, fixture.bytes);
+  assert.equal(run('import-submission.mjs', input).status, 0);
+  const outside = await fs.mkdtemp(path.join(ROOT, '.tmp', 'outside-'));
+  t.after(() => fs.rm(outside, { recursive: true, force: true }));
+  await fs.symlink(outside, path.join(root, 'staging', fixture.id, 'approval.json'), process.platform === 'win32' ? 'junction' : 'dir');
+  assert.notEqual(run('approve-submission.mjs', fixture.id, '--privacy-reviewed', '--copyright-reviewed', '--reviewer', '검토자').status, 0);
+  assert.deepEqual(await fs.readdir(path.join(root, 'public', 'plans')), []);
+  assert.deepEqual(await fs.readdir(path.join(root, 'records')), []);
+  assert.deepEqual(await fs.readdir(outside), []);
+});
 test('import stays private; explicit review required; approve, validate, catalog and duplicate rejection', async t => {
   const { root, run } = await sandbox(t);
   const fixture = await submissionFixture();

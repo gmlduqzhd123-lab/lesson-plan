@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { ROOT, main, unpackSubmission, published } from './lib.mjs';
+import { ROOT, main, unpackSubmission, published, ensureDirectory } from './lib.mjs';
 import { LIMITS } from '../shared/schema.mjs';
 
 main(async () => {
@@ -13,8 +13,7 @@ main(async () => {
   const existing = await published();
   if (records.some(r => existing.some(p => p.sha256 === r.plan.sha256))) throw new Error('이미 공개된 원본 파일이 포함되어 있습니다. 중복 자료를 제거해주세요.');
   const stagingRoot = path.join(ROOT, 'staging');
-  await fs.mkdir(stagingRoot, { recursive: true });
-  if ((await fs.lstat(stagingRoot)).isSymbolicLink()) throw new Error('staging 링크는 허용하지 않습니다.');
+  await ensureDirectory(stagingRoot);
   const dest = path.join(stagingRoot, manifest.submissionId);
   await fs.mkdir(dest); // Reject an existing submission rather than overwrite a review.
   try {

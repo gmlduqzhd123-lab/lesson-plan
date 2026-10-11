@@ -1,5 +1,6 @@
 import { readSafeZip } from '../../../shared/safe-zip.mjs';
 import { LIMITS } from '../../../shared/schema.mjs';
+import { isFieldLabel } from '../classifier/fields';
 
 export function extractHwpx(bytes: Uint8Array): string {
   const entries = readSafeZip(bytes, { maxInput: LIMITS.file, maxExpanded: 64 * 1024 ** 2 });
@@ -14,22 +15,32 @@ export function extractHwpx(bytes: Uint8Array): string {
     const doc = new DOMParser().parseFromString(raw, 'application/xml');
     if (doc.getElementsByTagName('parsererror').length) throw new Error('손상된 HWPX XML입니다.');
     const all = Array.from(doc.getElementsByTagName('*'));
+    const paragraphLines: string[] = [];
     for (const node of all) {
       if (node.localName !== 'p') continue;
       const texts = Array.from(node.getElementsByTagName('*')).filter(n => n.localName === 't' && closestParagraph(n) === node).map(n => n.textContent ?? '');
-      if (texts.length) lines.push(texts.join('').trim());
+      if (texts.length) paragraphLines.push(texts.join('').trim());
     }
     // Preserve row label/value relationships even when each table cell is a paragraph.
-    for (const row of all.filter(n => n.localName === 'tr')) {
+    const rows = all.filter(n => n.localName === 'tr');
+    for (const row of rows) {
       const cells = Array.from(row.children).filter(n => n.localName === 'tc');
-      const values = cells.map(cell => Array.from(cell.getElementsByTagName('*')).filter(n => n.localName === 't').map(n => n.textContent ?? '').join(' ').trim());
-      if (values.length > 1) lines.unshift(values.join('\t'));
+      const values = cells.map(cellText);
+      const next = row.nextElementSibling;
+      if (values.length && values.every(isFieldLabel) && next?.localName === 'tr') {
+        const nextValues = Array.from(next.children).filter(n => n.localName === 'tc').map(cellText);
+        if (nextValues.length === values.length) values.forEach((label, i) => { if (nextValues[i] && !isFieldLabel(nextValues[i])) lines.push(`${label}\t${nextValues[i]}`); });
+      } else if (values.length > 1) lines.push(values.join('\t'));
     }
+    lines.push(...paragraphLines);
   }
   const text = lines.filter(Boolean).join('\n');
-  if (!text.trim()) throw new Error('추출 가능한 텍스트가 없습니다. 그림 위주 자료는 직접 입력해주세요.');
   if (text.length > LIMITS.text) throw new Error('문서 본문이 너무 깁니다. 자료를 나누어 제출해주세요.');
   return text;
+}
+function cellText(cell: Element): string {
+  const paragraphs = Array.from(cell.getElementsByTagName('*')).filter(n => n.localName === 'p');
+  return paragraphs.map(p => Array.from(p.getElementsByTagName('*')).filter(n => n.localName === 't' && closestParagraph(n) === p).map(n => n.textContent ?? '').join('')).join(' ').trim();
 }
 function closestParagraph(n: Element): Element | null {
   let parent = n.parentElement;

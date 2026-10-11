@@ -10,10 +10,33 @@ import { PlanSchema, LIMITS } from '../shared/schema.mjs';
 import { searchPlans } from '../src/lib/search';
 import { createSubmission } from '../src/lib/submission';
 import type { Plan } from '../src/types';
+import { reconcileDuplicates } from '../src/lib/drafts';
 
 beforeAll(() => vi.stubGlobal('crypto', webcrypto));
 const makeFile = (bytes: Uint8Array, name: string) => ({ name, size: bytes.length, arrayBuffer: async () => bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) }) as File;
 describe('HWPX and classification', () => {
+  it('keeps a valid image-only HWPX editable while malformed XML remains rejected', async () => {
+    const zip = new JSZip(); zip.file('Contents/section0.xml', '<s><picture/></s>');
+    const result = await analyzeFile(makeFile(await zip.generateAsync({ type: 'uint8array' }), '그림.hwpx'));
+    expect(result.plan?.previewText).toBe(''); expect(result.warning).toContain('직접 입력');
+    expect(result.confidence).toBe('확인 필요');
+  });
+  it('reads vertical header tables, numeric grades and split text runs', async () => {
+    const zip = new JSZip();
+    zip.file('Contents/section0.xml', '<s><tr><tc><p><t>학년</t></p></tc><tc><p><t>교과</t></p></tc><tc><p><t>단원</t></p></tc></tr><tr><tc><p><t>5</t></p></tc><tc><p><t>체</t><t>육</t></p></tc><tc><p><t>도전</t></p></tc></tr></s>');
+    const r = classify(extractHwpx(await zip.generateAsync({ type: 'uint8array' })), '자료.hwpx');
+    expect(r.values).toMatchObject({ grades: [5], subject: '체육', unit: '도전' });
+    expect(r.confidence).toBe('높음');
+  });
+  it('preserves first-section metadata precedence', async () => {
+    const zip = new JSZip();
+    for (const [index, grade] of [3, 6].entries()) zip.file(`Contents/section${index}.xml`, `<s><tr><tc><p><t>학년</t></p></tc><tc><p><t>${grade}학년</t></p></tc></tr></s>`);
+    expect(classify(extractHwpx(await zip.generateAsync({ type: 'uint8array' })), '자료.hwpx').values.grades).toEqual([3]);
+  });
+  it('recognizes spaced labels without giving filename guesses high confidence', () => {
+    expect(classify('학 년: 4\n교 과: 국어\n단 원: 읽기', '자료.hwpx').values).toMatchObject({ grades: [4], subject: '국어', unit: '읽기' });
+    expect(classify('학년: 미상\n교과: 미상\n단원: 읽기', '5학년_국어.hwpx').confidence).toBe('확인 필요');
+  });
   it('extracts paragraphs and table label/value relationships', async () => { const text = extractHwpx(await hwpxFixture()); expect(text).toContain('학년\t5학년\t교과\t체육'); expect(text).toContain('함께 달리기'); });
   it('classifies explicit table fields, unit, lesson, objective and standard', async () => { const r = classify(extractHwpx(await hwpxFixture()), '자료.hwpx'); expect(r.values).toMatchObject({ grades: [5], subject: '체육', unit: '2. 도전', lessonNumber: '2/4', topic: '함께 달리기', curriculum: '' }); expect(r.values.standards).toEqual(['[6체02-08]']); expect(r.confidence).toBe('높음'); });
   it('does not equate a standard grade band with actual grade', () => { const r = classify('[6체02-08]', '수업.hwpx'); expect(r.values.grades).toEqual([]); expect(r.values.subject).toBe('체육'); expect(r.confidence).toBe('확인 필요'); });
@@ -32,6 +55,12 @@ describe('ZIP safety and metadata', () => {
   it('rejects unsafe catalog path and false hash identity', async () => { const p = recordFixture(await hwpxFixture()); expect(PlanSchema.safeParse({ ...p, filePath: '../private.hwp' }).success).toBe(false); expect(PlanSchema.safeParse({ ...p, sha256: 'f'.repeat(64) }).success).toBe(false); });
 });
 describe('search and submission', () => {
+  it('promotes a duplicate when the original row is removed, but keeps published duplicates blocked', async () => {
+    const p = recordFixture(await hwpxFixture()) as Plan;
+    const d = { key: 'duplicate', file: makeFile(new Uint8Array(), 'duplicate.hwpx'), state: '중복' as const, plan: p };
+    expect(reconcileDuplicates([d], [])[0].state).toBe('완료');
+    expect(reconcileDuplicates([d], [p])[0].state).toBe('중복');
+  });
   const f = { query: '', grade: '', subject: '', unit: '', sort: 'latest' };
   it('combines grade, subject, unit and whitespace-insensitive Korean query', async () => { const p = recordFixture(await hwpxFixture(), { status: 'approved', publishedAt: '2026-10-11T00:00:00Z' }) as Plan; expect(searchPlans([p], { ...f, grade: '5', subject: '체육', unit: '2.도전', query: '함께달리기' })).toHaveLength(1); expect(searchPlans([p], { ...f, grade: '4' })).toHaveLength(0); expect(searchPlans([p], { ...f, query: '[6체02-08]' })).toHaveLength(1); });
   it('sorts by title, grade, subject and date', async () => { const a = recordFixture(await hwpxFixture(), { title: '가 수업', grades: [5], publishedAt: '2026-10-10' }) as Plan; const b = { ...a, id: 'b', title: '나 수업', grades: [1], subject: '국어', publishedAt: '2026-10-11' }; expect(searchPlans([a,b], { ...f, sort: 'title' })[0]).toBe(a); for (const sort of ['grade','subject','latest']) expect(searchPlans([a,b], { ...f, sort })[0]).toBe(b); });

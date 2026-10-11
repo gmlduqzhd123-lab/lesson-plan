@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { ROOT, main, regularFile, unpackSubmission, published, hash } from './lib.mjs';
+import { ROOT, main, regularFile, unpackSubmission, published, hash, ensureDirectory, writeJsonAtomic } from './lib.mjs';
 import { PlanSchema } from '../shared/schema.mjs';
 
 main(async () => {
@@ -22,7 +22,7 @@ main(async () => {
     candidates.push({ plan: PlanSchema.parse({ ...p, status: 'approved', publishedAt: new Date().toISOString() }), file });
   }
   // All records pass preflight before any publicly served path is written.
-  for (const dir of [path.join(ROOT, 'records'), path.join(ROOT, 'public'), path.join(ROOT, 'public', 'plans')]) if ((await fs.lstat(dir)).isSymbolicLink()) throw new Error('공개 경로 링크는 허용하지 않습니다.');
+  for (const dir of [path.join(ROOT, 'records'), path.join(ROOT, 'public', 'plans')]) await ensureDirectory(dir);
   const written = [];
   try {
     for (const { plan, file } of candidates) {
@@ -30,7 +30,7 @@ main(async () => {
       await fs.writeFile(fileDest, file, { flag: 'wx' }); written.push(fileDest);
       await fs.writeFile(recordDest, JSON.stringify(plan, null, 2) + '\n', { flag: 'wx' }); written.push(recordDest);
     }
-    await fs.writeFile(path.join(stage, 'approval.json'), JSON.stringify({ reviewedBy: reviewer, privacyReviewed: true, copyrightReviewed: true, approvedAt: new Date().toISOString(), records: candidates.map(r => r.plan.id) }, null, 2));
+    await writeJsonAtomic(path.join(stage, 'approval.json'), { reviewedBy: reviewer, privacyReviewed: true, copyrightReviewed: true, approvedAt: new Date().toISOString(), records: candidates.map(r => r.plan.id) });
     console.log(`로컬 공개 폴더 반영: ${candidates.length}개\n다음: npm run build:catalog && npm run build\n검토 후 records, public/plans, public/catalog를 커밋·push해야 웹사이트에 게시됩니다.`);
   } catch (error) { for (const file of written.reverse()) await fs.unlink(file); throw error; }
 });

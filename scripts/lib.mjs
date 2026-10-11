@@ -1,12 +1,35 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { PlanSchema, ManifestSchema, LIMITS, validateSignature } from '../shared/schema.mjs';
 import { readSafeZip } from '../shared/safe-zip.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+export async function ensureDirectory(directory) {
+  const relative = path.relative(ROOT, path.resolve(directory));
+  if (relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('작업 폴더 밖의 경로입니다.');
+  let at = ROOT;
+  for (const part of relative.split(path.sep).filter(Boolean)) {
+    at = path.join(at, part);
+    try { await fs.mkdir(at); } catch (error) { if (error.code !== 'EEXIST') throw error; }
+    const stat = await fs.lstat(at);
+    if (stat.isSymbolicLink() || !stat.isDirectory()) throw new Error('폴더 링크 또는 일반 파일 경로는 허용하지 않습니다.');
+  }
+}
+export async function writeJsonAtomic(filename, value) {
+  await ensureDirectory(path.dirname(filename));
+  try {
+    const stat = await fs.lstat(filename);
+    if (stat.isSymbolicLink() || !stat.isFile()) throw new Error('출력 파일 링크는 허용하지 않습니다.');
+  } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  const temp = `${filename}.${randomUUID()}.tmp`;
+  try {
+    await fs.writeFile(temp, JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
+    await fs.rename(temp, filename);
+  } finally { await fs.unlink(temp).catch(error => { if (error.code !== 'ENOENT') throw error; }); }
+}
 export async function regularFile(filename) {
   const relative = path.relative(ROOT, path.resolve(filename));
   if (relative.startsWith('..') || path.isAbsolute(relative)) throw new Error('작업 폴더 밖의 파일입니다.');
@@ -22,7 +45,7 @@ export async function regularFile(filename) {
 }
 export async function published() {
   const recordsDir = path.join(ROOT, 'records');
-  await fs.mkdir(recordsDir, { recursive: true });
+  await ensureDirectory(recordsDir);
   const names = await fs.readdir(recordsDir);
   const records = [];
   const ids = new Set(), hashes = new Set();
@@ -36,7 +59,7 @@ export async function published() {
     ids.add(p.id); hashes.add(p.sha256); records.push(p);
   }
   const plansDir = path.join(ROOT, 'public', 'plans');
-  await fs.mkdir(plansDir, { recursive: true });
+  await ensureDirectory(plansDir);
   const referenced = new Set(records.map(p => path.basename(p.filePath)));
   for (const name of await fs.readdir(plansDir)) if (name !== '.gitkeep' && !referenced.has(name)) throw new Error(`메타데이터 없는 공개 파일: ${name}`);
   return records;

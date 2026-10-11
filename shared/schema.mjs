@@ -55,6 +55,6 @@ export function validateSignature(bytes, format) {
     if (bytes[0] !== 0x50 || bytes[1] !== 0x4b || bytes[2] !== 3 || bytes[3] !== 4) throw new Error('HWPX ZIP 서명이 올바르지 않습니다.');
   } else {
     const magic = [0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1];
-    if (!magic.every((b, i) => bytes[i] === b)) throw new Error('HWP 5.x 바이너리 서명이 아닙니다. HWP 3.x 및 암호화·비정상 파일은 직접 확인해주세요.');
+    if (!magic.every((b, i) => bytes[i] === b)) throw new Error('HWP 5.x에서 사용하는 OLE 컨테이너 서명이 아닙니다. HWP 3.x는 지원하지 않습니다.');
   }
 }

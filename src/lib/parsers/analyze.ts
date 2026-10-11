@@ -16,8 +16,11 @@ export async function analyzeFile(file: File): Promise<Pick<Draft, 'plan' | 'con
   validateSignature(bytes, format);
   const sha256 = await hashFile(file);
   let text = '', warning = '';
-  if (format === 'HWPX') text = extractHwpx(bytes);
-  else warning = '구형 HWP 본문 분석은 지원하지 않습니다. 파일명으로 추정했으며, 직접 분류를 확인해주세요. 원본은 그대로 보존합니다.';
+  if (format === 'HWPX') {
+    text = extractHwpx(bytes);
+    if (!text.trim()) warning = '추출 가능한 본문 텍스트가 없습니다. 그림의 글자는 분석하지 않으므로 원본을 확인하고 분류를 직접 입력해주세요.';
+  }
+  else warning = 'HWP 본문 분석은 지원하지 않습니다. OLE 컨테이너 서명만 확인했으며, 문서 구조·암호화 여부는 검증하지 않습니다. 파일명 추정값을 직접 수정하고 원본은 한글에서 확인해주세요.';
   const result = classify(text, file.name);
   const plan: Plan = {
     id: `plan-${sha256}`, title: file.name.replace(/\.hwpx?$/i, ''), grades: [], gradeBand: '', subject: '기타', unit: '', normalizedUnit: '',

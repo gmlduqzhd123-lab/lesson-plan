@@ -6,3 +6,5 @@
 @media(max-width:390px){.container{width:calc(100% - 28px)}.hero h1{font-size:33px}.brand strong{font-size:14px}.brand small{font-size:7px}.brand{gap:8px}.hero-search input{font-size:11px}.search-hints>span{width:100%}.grade-card{padding:14px 10px}.grade-card>span:last-child{font-size:9px}.grade-decoration{right:10px;font-size:24px}.stats-strip>a{font-size:9px}.stat-icon{height:32px;width:32px}.stats-strip>div{gap:8px}.library-cards,.card-grid{grid-template-columns:1fr}.stepper{gap:5px;font-size:10px}.stepper i{width:8px}.section-heading h2{font-size:20px}.share-banner>div{min-width:210px}.hero p{font-size:13px}.filters{gap:7px;padding:13px}.metadata>div{grid-template-columns:70px 1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 h1,h2,h3,.grade-card>span:last-child{word-break:keep-all}
+
+fieldset.editor{min-width:0;margin-inline:0;width:100%}

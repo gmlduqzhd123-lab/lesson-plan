@@ -1,16 +1,18 @@
 import JSZip from 'jszip';
-import { ManifestSchema, PlanSchema } from '../../shared/schema.mjs';
+import { ManifestSchema, PlanSchema, LIMITS } from '../../shared/schema.mjs';
 import type { Draft } from '../types';
 import { hashFile } from './parsers/analyze';
 
 export async function createSubmission(drafts: Draft[], declarations: { privacy: boolean; copyright: boolean }) {
   if (!drafts.length || drafts.some(d => d.state !== '완료' || !d.plan)) throw new Error('실패·중복 파일을 제거하고 분석을 완료해주세요.');
+  if (!declarations.privacy || !declarations.copyright) throw new Error('개인정보 및 저작권 확인이 필요합니다.');
+  if (drafts.length > LIMITS.files || drafts.reduce((total, d) => total + d.file.size, 0) > LIMITS.batch) throw new Error('제출 개수 또는 전체 파일 크기 제한을 초과했습니다.');
   const submissionId = `submission-${crypto.randomUUID()}`;
   const entries = [];
   const zip = new JSZip();
   const seen = new Set();
   for (const d of drafts) {
-    const p = PlanSchema.parse(d.plan);
+    const p = PlanSchema.parse({ ...d.plan, ...Object.fromEntries(['objectives', 'standards', 'keywords'].map(key => [key, d.plan![key as 'objectives' | 'standards' | 'keywords'].map(s => s.trim()).filter(Boolean)])) });
     if (!p.license.trim()) throw new Error(`${p.originalFileName}: 이용 조건을 입력해주세요.`);
     if (seen.has(p.sha256)) throw new Error('동일한 원본 파일이 중복되었습니다.');
     seen.add(p.sha256);
