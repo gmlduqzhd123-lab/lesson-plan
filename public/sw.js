@@ -2,7 +2,7 @@
 // 앱 파일은 새 버전을 먼저 받아 오고(네트워크 우선), 실패할 때만 저장해 둔 사본을 써요.
 // 지도안 원본 파일(plans/)은 크기가 커서 저장하지 않아요.
 // 같은 주소(gmlduqzhd123-lab.github.io)의 다른 앱들과 저장소를 함께 쓰므로, 이 앱의 이전 캐시만 지운다.
-const CACHE = 'lesson-plan-v3';
+const CACHE = 'lesson-plan-v4';
 const CACHE_PREFIX = 'lesson-plan-v';
 const CORE = ['./', './index.html', './manifest.webmanifest', './ys-install.js', './ys-qr.js', './qr.svg', './icons/icon-192.png', './icons/icon-512.png'];
 

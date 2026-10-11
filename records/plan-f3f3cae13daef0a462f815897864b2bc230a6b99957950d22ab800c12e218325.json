@@ -1,0 +1,42 @@
+{
+  "id": "plan-f3f3cae13daef0a462f815897864b2bc230a6b99957950d22ab800c12e218325",
+  "title": "2026. 좋은수업-여수한려초-유수영(2차-4학년 수학)",
+  "grades": [
+    4
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "원 게시물 등록일: 2026.09.29."
+  ],
+  "subject": "수학",
+  "unit": "1. 분수의 덧셈과 뺄셈",
+  "normalizedUnit": "1.분수의덧셈과뺄셈",
+  "lessonNumber": "4/10",
+  "topic": "분모가 같은 진분수의 뺄셈 원리를 알아보고 계산하기",
+  "objectives": [],
+  "standards": [
+    "[4수01-15]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수한려초등학교",
+    "한려초",
+    "2026년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업-여수한려초-유수영(2차-4학년 수학).hwp",
+  "filePath": "plans/f3f3cae13daef0a462f815897864b2bc230a6b99957950d22ab800c12e218325.hwp",
+  "fileSize": 310272,
+  "sha256": "f3f3cae13daef0a462f815897864b2bc230a6b99957950d22ab800c12e218325",
+  "previewText": "",
+  "author": "유수영",
+  "license": "자료 제공자가 여수한려초등학교 게시판 전체 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://hallyo.jge.es.kr/hallyo_es/na/ntt/selectNttInfo.do?mi=78718&bbsId=78718&nttSn=1801232750",
+  "publishedAt": "2026-10-11T05:49:02.874Z",
+  "status": "approved"
+}

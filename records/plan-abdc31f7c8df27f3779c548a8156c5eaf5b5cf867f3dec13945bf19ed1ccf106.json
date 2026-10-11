@@ -1,0 +1,47 @@
+{
+  "id": "plan-abdc31f7c8df27f3779c548a8156c5eaf5b5cf867f3dec13945bf19ed1ccf106",
+  "title": "2026. 좋은수업-여수한려초-김희엽(1차-5학년 체육) (공개용 PDF)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "민감 문단·학생 식별 정보와 포함된 학생 사진·응답 화면을 삭제한 공개용 텍스트 PDF입니다. 원본의 표·그림 배치를 재현하지 않았으며 원본은 비공개로 보관합니다.",
+    "원 게시물 등록일: 2026.06.25.",
+    "민감 문단·학생 식별 정보·학생 사진을 삭제한 공개용 PDF입니다. 원본은 비공개로 보관합니다. 추출한 텍스트를 재배치하여 표·그림은 원문과 다를 수 있습니다."
+  ],
+  "subject": "체육",
+  "unit": "2. 스포츠",
+  "normalizedUnit": "2.스포츠",
+  "lessonNumber": "7/10",
+  "topic": "친구와 소통하며 발야구형 게임하기",
+  "objectives": [],
+  "standards": [
+    "[6체02-04]",
+    "[6체02-05]",
+    "[6체02-06]",
+    "[6체02-11]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수한려초등학교",
+    "한려초",
+    "2026년 게시",
+    "단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "공개용_2026. 좋은수업-여수한려초-김희엽(1차-5학년 체육).pdf",
+  "filePath": "plans/abdc31f7c8df27f3779c548a8156c5eaf5b5cf867f3dec13945bf19ed1ccf106.pdf",
+  "fileSize": 121731,
+  "sha256": "abdc31f7c8df27f3779c548a8156c5eaf5b5cf867f3dec13945bf19ed1ccf106",
+  "previewText": "",
+  "author": "김희엽",
+  "license": "자료 제공자가 여수한려초등학교 게시판 전체 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://hallyo.jge.es.kr/hallyo_es/na/ntt/selectNttInfo.do?mi=78718&bbsId=78718&nttSn=1801122733",
+  "publishedAt": "2026-10-11T05:51:49.442Z",
+  "status": "approved"
+}
