@@ -1,0 +1,10 @@
+node_modules/
+dist/
+staging/
+.tmp/
+test-results/
+playwright-report/
+*.zip
+*.log
+.env*
+!.env.example
