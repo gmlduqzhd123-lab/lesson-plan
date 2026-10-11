@@ -15,6 +15,7 @@ const check = (name) => { report.checks.push(name); console.log(`PASS ${name}`);
 try {
   const context = await browser.newContext({ acceptDownloads: true });
   const page = await context.newPage();
+  await page.route('**/catalog/index.json', route => route.fulfill({ json: [] }));
   page.on('request', request => {
     if (new URL(request.url()).origin !== new URL(origin).origin) report.externalRequests.push(request.url());
     if (!['GET', 'HEAD'].includes(request.method())) report.writeRequests.push({ url: request.url(), method: request.method() });
@@ -39,7 +40,7 @@ try {
   const bytes = await hwpxFixture();
   await page.goto(`${origin}#/upload`);
   const hwpBytes = Buffer.from([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1, 0]); // Signature fixture; not a real Hangul document.
-  await page.getByLabel('한글 파일 선택').setInputFiles([{ name: '5학년_체육_지도안.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from(bytes) }, { name: '중복.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from(bytes) }, { name: '손상.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from('broken') }, { name: '수동분류.hwp', mimeType: 'application/octet-stream', buffer: hwpBytes }]);
+  await page.getByLabel('지도안 파일 선택').setInputFiles([{ name: '5학년_체육_지도안.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from(bytes) }, { name: '중복.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from(bytes) }, { name: '손상.hwpx', mimeType: 'application/octet-stream', buffer: Buffer.from('broken') }, { name: '수동분류.hwp', mimeType: 'application/octet-stream', buffer: hwpBytes }]);
   await page.getByText('같은 원본이 있습니다.', { exact: false }).waitFor(); await page.getByText('HWPX ZIP 서명이 올바르지 않습니다.', { exact: false }).waitFor(); check('multi-file analysis, duplicate hash and bad file isolation');
   await page.getByRole('button', { name: '중복.hwpx 제거', exact: true }).click(); await page.getByRole('button', { name: '손상.hwpx 제거', exact: true }).click();
   await page.getByRole('button', { name: '5학년_체육_지도안.hwpx 분류 수정', exact: true }).click();

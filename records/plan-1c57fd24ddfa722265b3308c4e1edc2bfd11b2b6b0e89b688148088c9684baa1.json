@@ -1,0 +1,44 @@
+{
+  "id": "plan-1c57fd24ddfa722265b3308c4e1edc2bfd11b2b6b0e89b688148088c9684baa1",
+  "title": "2026. 좋은수업실천연구 시·군 단위 교수학습 과정안(2차_국어_김다은)",
+  "grades": [
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "6-2-독서. 다양한 책을 읽고 문제를 해결해요",
+  "normalizedUnit": "6-2-독서.다양한책을읽고문제를해결해요",
+  "lessonNumber": "",
+  "topic": "논어에서 발견한 깨달음으로 AI사례 바라보기(9/18)",
+  "objectives": [],
+  "standards": [
+    "[6국02-04]",
+    "[6국05-01]",
+    "[6실05-05]",
+    "[6과16-01]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "6-2-독서. 다양한 책을 읽고 문제를 해결해요",
+    "6-2-1. 깊이 있게 감상해요",
+    "6-2-5. 생활 속 인공지능",
+    "6-2-4. 과학과 나의 진로"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업실천연구 시·군 단위 교수학습 과정안(2차_국어_김다은).hwp",
+  "filePath": "plans/1c57fd24ddfa722265b3308c4e1edc2bfd11b2b6b0e89b688148088c9684baa1.hwp",
+  "fileSize": 96768,
+  "sha256": "1c57fd24ddfa722265b3308c4e1edc2bfd11b2b6b0e89b688148088c9684baa1",
+  "previewText": "",
+  "author": "김다은",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5194646",
+  "publishedAt": "2026-10-11T03:00:14.795Z",
+  "status": "approved"
+}

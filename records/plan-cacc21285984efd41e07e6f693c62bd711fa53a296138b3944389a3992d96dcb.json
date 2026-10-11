@@ -1,0 +1,40 @@
+{
+  "id": "plan-cacc21285984efd41e07e6f693c62bd711fa53a296138b3944389a3992d96dcb",
+  "title": "2026. 좋은수업 실천연구 2차 교수학습과정안(6학년, 사회)",
+  "grades": [
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "사회",
+  "unit": "6-2-1. 레모네이드로 배우는 시장경제 (레모네이드를 통해 함께 살아가는 경제 탐구하기)",
+  "normalizedUnit": "6-2-1.레모네이드로배우는시장경제(레모네이드를통해함께살아가는경제탐구하기)",
+  "lessonNumber": "",
+  "topic": "좋은 기업의 조건 찾기 (좋은 기업의 조건은 무엇일까?)",
+  "objectives": [],
+  "standards": [
+    "[6사11-01]",
+    "[6사11-02]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "6-2-1. 레모네이드로 배우는 시장경제",
+    "6-2-2. 시장경제와 국가 간 거래"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업 실천연구 2차 교수학습과정안(6학년, 사회).hwp",
+  "filePath": "plans/cacc21285984efd41e07e6f693c62bd711fa53a296138b3944389a3992d96dcb.hwp",
+  "fileSize": 1768448,
+  "sha256": "cacc21285984efd41e07e6f693c62bd711fa53a296138b3944389a3992d96dcb",
+  "previewText": "",
+  "author": "안용욱",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5191145",
+  "publishedAt": "2026-10-11T03:00:17.537Z",
+  "status": "approved"
+}

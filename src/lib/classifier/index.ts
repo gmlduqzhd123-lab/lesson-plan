@@ -60,7 +60,7 @@ export function classify(text: string, filename: string): Classification {
   const topic = field(text, ['학습 주제', '학습주제', '주제']);
   const objective = field(text, ['학습 목표', '학습목표']);
   const values: Partial<Plan> = {
-    title: filename.replace(/\.(hwpx?|HWPX?)$/i, '').slice(0, 200), ...info, subject: subject || '기타', unit, normalizedUnit: normalize(unit),
+    title: filename.replace(/\.(hwpx?|pdf)$/i, '').slice(0, 200), ...info, subject: subject || '기타', unit, normalizedUnit: normalize(unit),
     lessonNumber: field(text, ['차시']), topic, objectives: objective ? [objective] : [], standards,
     curriculum: field(text, ['교육과정']), teachingModel: field(text, ['교수학습모형', '수업모형']),
     duration: field(text, ['수업 시간', '수업시간']), keywords: [],

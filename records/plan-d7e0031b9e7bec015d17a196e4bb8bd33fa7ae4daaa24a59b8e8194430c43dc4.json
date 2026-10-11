@@ -1,0 +1,43 @@
+{
+  "id": "plan-d7e0031b9e7bec015d17a196e4bb8bd33fa7ae4daaa24a59b8e8194430c43dc4",
+  "title": "2026. 좋은수업 실천연구 시군 단위 공개수업(교과교육연구회_통합교과_남악초_김수린)",
+  "grades": [
+    1
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "통합교과",
+  "unit": "1-2-3. 상상",
+  "normalizedUnit": "1-2-3.상상",
+  "lessonNumber": "3/48",
+  "topic": "알에서 태어날 동물의 생김새 상상하기",
+  "objectives": [],
+  "standards": [
+    "[2바01-01]",
+    "[2바04-02]",
+    "[2슬04-02]",
+    "[2슬01-01]",
+    "[2즐04-02]",
+    "[2즐01-01]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "슬기로운생활"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시군 단위 공개수업(교과교육연구회_통합교과_남악초_김수린).pdf",
+  "filePath": "plans/d7e0031b9e7bec015d17a196e4bb8bd33fa7ae4daaa24a59b8e8194430c43dc4.pdf",
+  "fileSize": 504326,
+  "sha256": "d7e0031b9e7bec015d17a196e4bb8bd33fa7ae4daaa24a59b8e8194430c43dc4",
+  "previewText": "",
+  "author": "김수린",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192196",
+  "publishedAt": "2026-10-11T03:00:14.958Z",
+  "status": "approved"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "plan-231e5406d96eb785fd1b8b979a0d027d6f28724d9d7440b9158bb4bd42222480",
+  "title": "2026. 좋은수업 실천연구 1차 공개수업 지도안(슬생_마○정)",
+  "grades": [
+    2
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "통합교과",
+  "unit": "세계",
+  "normalizedUnit": "세계",
+  "lessonNumber": "",
+  "topic": "세계 탐구 계획 세우기",
+  "objectives": [],
+  "standards": [
+    "[2슬02-03]",
+    "[2바02-03]",
+    "[2즐02-03]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "슬기로운생활"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 1차 공개수업 지도안(슬생_마○정).pdf",
+  "filePath": "plans/231e5406d96eb785fd1b8b979a0d027d6f28724d9d7440b9158bb4bd42222480.pdf",
+  "fileSize": 1184760,
+  "sha256": "231e5406d96eb785fd1b8b979a0d027d6f28724d9d7440b9158bb4bd42222480",
+  "previewText": "",
+  "author": "마미정",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5182550",
+  "publishedAt": "2026-10-11T03:00:17.559Z",
+  "status": "approved"
+}

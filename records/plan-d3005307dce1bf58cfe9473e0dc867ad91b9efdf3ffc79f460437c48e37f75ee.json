@@ -1,0 +1,44 @@
+{
+  "id": "plan-d3005307dce1bf58cfe9473e0dc867ad91b9efdf3ffc79f460437c48e37f75ee",
+  "title": "2026. 좋은수업 실천연구 교수학습과정안 2차(실과과_추국현)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "실과",
+  "unit": "[프로젝트] 에코 커넥트(내 식판에서 시작하는 기후 위기 극복 프로젝트) (실과-6. 디지털 콘텐츠와 문제 해결)",
+  "normalizedUnit": "[프로젝트]에코커넥트(내식판에서시작하는기후위기극복프로젝트)(실과-6.디지털콘텐츠와문제해결)",
+  "lessonNumber": "",
+  "topic": "데이터를 바탕으로 바이브코딩을 하면 프로그램이 어떻게 달라질까?",
+  "objectives": [],
+  "standards": [
+    "[6도04-01]",
+    "[6실05-03]",
+    "[6국01-06]",
+    "[6실01-04]",
+    "[6사02-01]",
+    "[6국06-02]",
+    "[6국01-03]",
+    "[6실05-01]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "프로젝트 주제"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업 실천연구 교수학습과정안 2차(실과과_추국현).hwp",
+  "filePath": "plans/d3005307dce1bf58cfe9473e0dc867ad91b9efdf3ffc79f460437c48e37f75ee.hwp",
+  "fileSize": 1354752,
+  "sha256": "d3005307dce1bf58cfe9473e0dc867ad91b9efdf3ffc79f460437c48e37f75ee",
+  "previewText": "",
+  "author": "추국현",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5194603",
+  "publishedAt": "2026-10-11T03:00:14.809Z",
+  "status": "approved"
+}

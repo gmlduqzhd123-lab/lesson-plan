@@ -1,0 +1,42 @@
+{
+  "id": "plan-4c79e5578c8f5f5f3206e8158aaa1aa6e6eb7dfa828db6808a41c5f9a9ca5dd1",
+  "title": "2026. 좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실_국어_팔금초_오새봄)",
+  "grades": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "독서단원",
+  "normalizedUnit": "독서단원",
+  "lessonNumber": "",
+  "topic": "내가 찾은 팔금의 가치 표현하기",
+  "objectives": [],
+  "standards": [
+    "[4국05-02]",
+    "[6국05-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "독서단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실_국어_팔금초_오새봄).pdf",
+  "filePath": "plans/4c79e5578c8f5f5f3206e8158aaa1aa6e6eb7dfa828db6808a41c5f9a9ca5dd1.pdf",
+  "fileSize": 621996,
+  "sha256": "4c79e5578c8f5f5f3206e8158aaa1aa6e6eb7dfa828db6808a41c5f9a9ca5dd1",
+  "previewText": "",
+  "author": "오새봄",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5193793",
+  "publishedAt": "2026-10-11T03:00:14.840Z",
+  "status": "approved"
+}

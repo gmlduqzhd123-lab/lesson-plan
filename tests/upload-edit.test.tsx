@@ -13,7 +13,7 @@ afterEach(() => { cleanup(); vi.clearAllMocks(); });
 it('edits each file independently, preserves Enter and locks edits during ZIP creation', async () => {
   const user = userEvent.setup();
   render(<Upload publishedPlans={[]} />);
-  await user.upload(screen.getByLabelText('한글 파일 선택'), [new File(['first'], 'first.hwpx'), new File(['second'], 'second.hwpx')]);
+  await user.upload(screen.getByLabelText('지도안 파일 선택'), [new File(['first'], 'first.hwpx'), new File(['second'], 'second.hwpx')]);
   await waitFor(() => expect(screen.getByRole('button', { name: 'second.hwpx 분류 수정' }).hasAttribute('disabled')).toBe(false));
   await user.click(screen.getByRole('button', { name: 'first.hwpx 분류 수정' }));
   await user.clear(screen.getByLabelText('자료 제목')); await user.type(screen.getByLabelText('자료 제목'), '첫 파일 수정');

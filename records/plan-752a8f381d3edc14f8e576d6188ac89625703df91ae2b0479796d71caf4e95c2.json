@@ -1,0 +1,40 @@
+{
+  "id": "plan-752a8f381d3edc14f8e576d6188ac89625703df91ae2b0479796d71caf4e95c2",
+  "title": "2026. 좋은수업 실천연구 시군 단위 공개수업(독서인문선도교실_국어_고성초)",
+  "grades": [
+    4
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "4-2-3. 의견을 모아서",
+  "normalizedUnit": "4-2-3.의견을모아서",
+  "lessonNumber": "",
+  "topic": "일상생활 문제 해결 토의하기(우리 반 '마음약국' 이용 수칙을 정해 볼까?)",
+  "objectives": [],
+  "standards": [
+    "[4사08-01]",
+    "[4국01-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "4-2-1. 민주주의와 자치",
+    "4-2-3. 의견을 모아서"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시군 단위 공개수업(독서인문선도교실_국어_고성초).pdf",
+  "filePath": "plans/752a8f381d3edc14f8e576d6188ac89625703df91ae2b0479796d71caf4e95c2.pdf",
+  "fileSize": 229010,
+  "sha256": "752a8f381d3edc14f8e576d6188ac89625703df91ae2b0479796d71caf4e95c2",
+  "previewText": "",
+  "author": "류진희",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192043",
+  "publishedAt": "2026-10-11T03:00:17.495Z",
+  "status": "approved"
+}

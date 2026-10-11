@@ -1,0 +1,40 @@
+{
+  "id": "plan-0faf2de2b3e4775e0b62dfb773dfa8c55540eedbbfb927420fb5ac658915d84f",
+  "title": "2026. 좋은수업 실천연구 시군 단위 공개수업안(2030수업교사,사회,강한성)",
+  "grades": [
+    3
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "사회",
+  "unit": "1. 사회 변화와 다양한 문화 - ② 다양한 문화에 대한 이해와 존중",
+  "normalizedUnit": "1.사회변화와다양한문화-2다양한문화에대한이해와존중",
+  "lessonNumber": "15/18",
+  "topic": "무엇이든 도와드려요! 3학년 고민 해결 사무소",
+  "objectives": [],
+  "standards": [
+    "[4사03-02]",
+    "[4도02-03]",
+    "[4도04-01]",
+    "[4미02-05]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업 실천연구 시군 단위 공개수업안(2030수업교사,사회,강한성).hwp",
+  "filePath": "plans/0faf2de2b3e4775e0b62dfb773dfa8c55540eedbbfb927420fb5ac658915d84f.hwp",
+  "fileSize": 2161664,
+  "sha256": "0faf2de2b3e4775e0b62dfb773dfa8c55540eedbbfb927420fb5ac658915d84f",
+  "previewText": "",
+  "author": "강한성",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5194843",
+  "publishedAt": "2026-10-11T03:00:14.769Z",
+  "status": "approved"
+}

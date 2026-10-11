@@ -1,0 +1,35 @@
+{
+  "id": "plan-fcd3372ecbfced0d4c3273c6b718857858142cac74521dea2a34e09139415693",
+  "title": "2026. 좋은수업 실천연구 시·군 단위 공개수업(교과교육연구회_실과_임자초_문영석)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "실과",
+  "unit": "4. 우리 생활과 수송",
+  "normalizedUnit": "4.우리생활과수송",
+  "lessonNumber": "5/ 8",
+  "topic": "지역의 문제를 해결하는 친환경 수송 수단 구상하기",
+  "objectives": [],
+  "standards": [],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시·군 단위 공개수업(교과교육연구회_실과_임자초_문영석).pdf",
+  "filePath": "plans/fcd3372ecbfced0d4c3273c6b718857858142cac74521dea2a34e09139415693.pdf",
+  "fileSize": 479962,
+  "sha256": "fcd3372ecbfced0d4c3273c6b718857858142cac74521dea2a34e09139415693",
+  "previewText": "",
+  "author": "문영석",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5191740",
+  "publishedAt": "2026-10-11T03:00:17.504Z",
+  "status": "approved"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "plan-d50cee86808b677cf8173dc397f596e40f78584d4db5a70129ac4984f7d6dd6f",
+  "title": "2026좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실_국어_상암초_홍하얀)",
+  "grades": [
+    4
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "4-2-독서. 독서 토의 준비하기",
+  "normalizedUnit": "4-2-독서.독서토의준비하기",
+  "lessonNumber": "",
+  "topic": "온 책 읽기를 통한 질문으로 토의 주제를 세우고 토의 준비하기",
+  "objectives": [],
+  "standards": [
+    "[4국05-02]",
+    "[4국01-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "4-2-독서. 독서 토의 준비하기"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실_국어_상암초_홍하얀).pdf",
+  "filePath": "plans/d50cee86808b677cf8173dc397f596e40f78584d4db5a70129ac4984f7d6dd6f.pdf",
+  "fileSize": 288363,
+  "sha256": "d50cee86808b677cf8173dc397f596e40f78584d4db5a70129ac4984f7d6dd6f",
+  "previewText": "",
+  "author": "홍하얀",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192758",
+  "publishedAt": "2026-10-11T03:00:14.887Z",
+  "status": "approved"
+}

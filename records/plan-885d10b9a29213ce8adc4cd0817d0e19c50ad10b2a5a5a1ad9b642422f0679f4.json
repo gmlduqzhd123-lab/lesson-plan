@@ -1,0 +1,41 @@
+{
+  "id": "plan-885d10b9a29213ce8adc4cd0817d0e19c50ad10b2a5a5a1ad9b642422f0679f4",
+  "title": "2026. 독서인문교육과정 수업안(국어, 안단요)",
+  "grades": [
+    1
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "1-2-3. 그림일기를 써요",
+  "normalizedUnit": "1-2-3.그림일기를써요",
+  "lessonNumber": "",
+  "topic": "경험에서 배운 점을 찾아 문장으로 말하기",
+  "objectives": [],
+  "standards": [
+    "[2국01-04]",
+    "[2국03-04]",
+    "[2바03-01]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "1-2-3. 그림일기를 써요",
+    "1-2. 하루"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 독서인문교육과정 수업안(국어, 안단요).pdf",
+  "filePath": "plans/885d10b9a29213ce8adc4cd0817d0e19c50ad10b2a5a5a1ad9b642422f0679f4.pdf",
+  "fileSize": 318894,
+  "sha256": "885d10b9a29213ce8adc4cd0817d0e19c50ad10b2a5a5a1ad9b642422f0679f4",
+  "previewText": "",
+  "author": "안단요",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5191850",
+  "publishedAt": "2026-10-11T03:00:17.500Z",
+  "status": "approved"
+}

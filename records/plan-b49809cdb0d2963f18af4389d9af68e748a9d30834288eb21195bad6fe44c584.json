@@ -1,0 +1,40 @@
+{
+  "id": "plan-b49809cdb0d2963f18af4389d9af68e748a9d30834288eb21195bad6fe44c584",
+  "title": "2026. 시군단위 좋은수업실천연구 수업안",
+  "grades": [
+    6
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "사회",
+  "unit": "조도 히어로! 지구촌을 구하는 작가 프로젝트",
+  "normalizedUnit": "조도히어로!지구촌을구하는작가프로젝트",
+  "lessonNumber": "15/22",
+  "topic": "조도 히어로! 지구촌을 구하는 작가 프로젝트",
+  "objectives": [],
+  "standards": [
+    "[6사12-02]",
+    "[6도03-04]",
+    "[6국03-06]",
+    "[6국05-05]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "프로젝트 주제"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 시군단위 좋은수업실천연구 수업안.pdf",
+  "filePath": "plans/b49809cdb0d2963f18af4389d9af68e748a9d30834288eb21195bad6fe44c584.pdf",
+  "fileSize": 602135,
+  "sha256": "b49809cdb0d2963f18af4389d9af68e748a9d30834288eb21195bad6fe44c584",
+  "previewText": "",
+  "author": "박주영",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5193150",
+  "publishedAt": "2026-10-11T03:00:14.873Z",
+  "status": "approved"
+}

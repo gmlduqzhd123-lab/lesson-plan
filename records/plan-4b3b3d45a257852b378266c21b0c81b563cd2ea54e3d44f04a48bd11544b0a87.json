@@ -1,0 +1,38 @@
+{
+  "id": "plan-4b3b3d45a257852b378266c21b0c81b563cd2ea54e3d44f04a48bd11544b0a87",
+  "title": "2026. 좋은수업 실천연구 시군 단위 공개수업(2030수업교사_창체_곡성중앙초)",
+  "grades": [
+    4
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "창의적 체험활동",
+  "unit": "지구 특공대: 강과 바다를 잇는 우리의 몸 실천",
+  "normalizedUnit": "지구특공대:강과바다를잇는우리의몸실천",
+  "lessonNumber": "",
+  "topic": "지구를 구하기 위한 우리의 실천 발표하기",
+  "objectives": [],
+  "standards": [
+    "[4체02-07]",
+    "[4체02-10]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "프로젝트 주제"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시군 단위 공개수업(2030수업교사_창체_곡성중앙초).pdf",
+  "filePath": "plans/4b3b3d45a257852b378266c21b0c81b563cd2ea54e3d44f04a48bd11544b0a87.pdf",
+  "fileSize": 570759,
+  "sha256": "4b3b3d45a257852b378266c21b0c81b563cd2ea54e3d44f04a48bd11544b0a87",
+  "previewText": "",
+  "author": "심우건",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5194621",
+  "publishedAt": "2026-10-11T03:00:14.800Z",
+  "status": "approved"
+}

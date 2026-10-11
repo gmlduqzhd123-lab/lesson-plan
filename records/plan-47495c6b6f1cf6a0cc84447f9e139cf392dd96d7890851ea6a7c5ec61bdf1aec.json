@@ -1,0 +1,39 @@
+{
+  "id": "plan-47495c6b6f1cf6a0cc84447f9e139cf392dd96d7890851ea6a7c5ec61bdf1aec",
+  "title": "2026. 수업나눔학교 교수학습과정안-목포임성초-한선아(1차-3학년-국어)",
+  "grades": [
+    3
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "3-1-㉯ 5. 인물에게 마음을 전해요",
+  "normalizedUnit": "3-1-나5.인물에게마음을전해요",
+  "lessonNumber": "4/14",
+  "topic": "인물의 성격을 파악하며 이야기 읽기",
+  "objectives": [],
+  "standards": [
+    "[4국05-01]",
+    "[4국03-04]",
+    "[4국04-04]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 수업나눔학교 교수학습과정안-목포임성초-한선아(1차-3학년-국어).hwp",
+  "filePath": "plans/47495c6b6f1cf6a0cc84447f9e139cf392dd96d7890851ea6a7c5ec61bdf1aec.hwp",
+  "fileSize": 118784,
+  "sha256": "47495c6b6f1cf6a0cc84447f9e139cf392dd96d7890851ea6a7c5ec61bdf1aec",
+  "previewText": "",
+  "author": "한선아",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5187529",
+  "publishedAt": "2026-10-11T03:00:17.544Z",
+  "status": "approved"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "plan-e43405d5bd0c51373aafa150302d79a5301b3042830d502c50910a28560b1c50",
+  "title": "2026. 시군단위 좋은수업실천연구 수업안(독서인문선도교실)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "5-2-4. 겪은 일을 바탕으로 글을 써요",
+  "normalizedUnit": "5-2-4.겪은일을바탕으로글을써요",
+  "lessonNumber": "9/12",
+  "topic": "오늘날의 숨은 영웅 알아보기",
+  "objectives": [],
+  "standards": [
+    "[6사04-02]",
+    "[6사05-06]",
+    "[6국05-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "5-2-1. 식민 통치와 저항, 전쟁이 바꾼 사회와 생활",
+    "5-2-4. 겪은 일을 바탕으로 글을 써요"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 시군단위 좋은수업실천연구 수업안(독서인문선도교실).hwp",
+  "filePath": "plans/e43405d5bd0c51373aafa150302d79a5301b3042830d502c50910a28560b1c50.hwp",
+  "fileSize": 2664960,
+  "sha256": "e43405d5bd0c51373aafa150302d79a5301b3042830d502c50910a28560b1c50",
+  "previewText": "",
+  "author": "이한솔",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5193378",
+  "publishedAt": "2026-10-11T03:00:14.856Z",
+  "status": "approved"
+}

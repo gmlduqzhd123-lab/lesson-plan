@@ -1,0 +1,43 @@
+{
+  "id": "plan-46602a0d624baba34cb84bde7b5190e28a071f46837601cf8390f8887cbfad9e",
+  "title": "2026. 1학기 좋은수업 실천연구 시.군 단위 공개수업안(도덕과)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "대상 필드의 5년 표기와 장소 필드를 교차 확인하여 5학년으로 분류함"
+  ],
+  "subject": "도덕",
+  "unit": "5-1-5. 모두에게 인권을",
+  "normalizedUnit": "5-1-5.모두에게인권을",
+  "lessonNumber": "3/4",
+  "topic": "우리 지역 인권 문제의 해결 방안 찾기 (우리 지역의 인권 침해 문제를 해결하기 위해서는 무엇을 변화시켜야 할까?)",
+  "objectives": [],
+  "standards": [
+    "[6사03-02]",
+    "[6도03-01]",
+    "[6국02-04]",
+    "[6국01-06]",
+    "[6미01-04]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 1학기 좋은수업 실천연구 시.군 단위 공개수업안(도덕과).hwp",
+  "filePath": "plans/46602a0d624baba34cb84bde7b5190e28a071f46837601cf8390f8887cbfad9e.hwp",
+  "fileSize": 1576960,
+  "sha256": "46602a0d624baba34cb84bde7b5190e28a071f46837601cf8390f8887cbfad9e",
+  "previewText": "",
+  "author": "박선화",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5191184",
+  "publishedAt": "2026-10-11T03:00:17.529Z",
+  "status": "approved"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "plan-87a6a9c60e2c8457f4e7ee6e1040a34af68c6f8c30302dd5f18f05c513678977",
+  "title": "2026. 좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실, 국어_남악초_박지선)",
+  "grades": [
+    3
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "국어",
+  "unit": "독서 단원. 계획대로 차근차근 읽어요",
+  "normalizedUnit": "독서단원.계획대로차근차근읽어요",
+  "lessonNumber": "",
+  "topic": "작품을 읽고 질문을 통해 생각과 느낌 나누기",
+  "objectives": [],
+  "standards": [
+    "[4국02-02]",
+    "[4국05-02]",
+    "[4국05-05]",
+    "[4국01-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "독서 단원. 계획대로 차근차근 읽어요",
+    "3-2-1. 경험과 관련지으며 이해해요"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2026. 좋은수업 실천연구 시·군 단위 공개수업(독서인문선도교실, 국어_남악초_박지선).pdf",
+  "filePath": "plans/87a6a9c60e2c8457f4e7ee6e1040a34af68c6f8c30302dd5f18f05c513678977.pdf",
+  "fileSize": 1615956,
+  "sha256": "87a6a9c60e2c8457f4e7ee6e1040a34af68c6f8c30302dd5f18f05c513678977",
+  "previewText": "",
+  "author": "박지선",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192161",
+  "publishedAt": "2026-10-11T03:00:17.489Z",
+  "status": "approved"
+}

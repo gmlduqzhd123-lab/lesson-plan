@@ -1,0 +1,40 @@
+{
+  "id": "plan-19672a836d0ab4da13814aceb5e344fc377d8b58a0817dabd28f219d9fa6e603",
+  "title": "우정이 커가는 교실 · 공개용 정리본",
+  "grades": [
+    3
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "학급 표기 3-1에서 3학년으로 추론함. 확인 권장",
+    "개별 학생의 민감 문단을 삭제한 공개용 텍스트 정리본입니다. 원본 HWP의 표·그림 배치를 재현하지 않았으며 원본은 비공개로 보관합니다."
+  ],
+  "subject": "국어",
+  "unit": "우정이 커가는 교실",
+  "normalizedUnit": "우정이커가는교실",
+  "lessonNumber": "",
+  "topic": "행동 속에 숨겨진 ‘속마음’을 찾아보고 다정하게 표현하기 본시 수업의 흐름",
+  "objectives": [],
+  "standards": [
+    "[4국01-03]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "프로젝트 주제"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "공개용_우정이_커가는_교실.pdf",
+  "filePath": "plans/19672a836d0ab4da13814aceb5e344fc377d8b58a0817dabd28f219d9fa6e603.pdf",
+  "fileSize": 113690,
+  "sha256": "19672a836d0ab4da13814aceb5e344fc377d8b58a0817dabd28f219d9fa6e603",
+  "previewText": "",
+  "author": "김순희",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5191622",
+  "publishedAt": "2026-10-11T03:00:17.514Z",
+  "status": "approved"
+}

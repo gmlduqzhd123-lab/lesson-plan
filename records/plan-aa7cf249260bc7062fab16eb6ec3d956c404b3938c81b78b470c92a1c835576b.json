@@ -1,0 +1,40 @@
+{
+  "id": "plan-aa7cf249260bc7062fab16eb6ec3d956c404b3938c81b78b470c92a1c835576b",
+  "title": "[독서인문] 2026. 시군단위 좋은수업 실천연구 수업안(무안사랑초_5학년_도덕_김주선)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "도덕",
+  "unit": "5-2-2. 공동체를 정의롭게!",
+  "normalizedUnit": "5-2-2.공동체를정의롭게!",
+  "lessonNumber": "5/2",
+  "topic": "정의로운 공동체 만들기",
+  "objectives": [],
+  "standards": [
+    "[6국02-05]",
+    "[6도03-02]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "단원",
+    "5-2-독. 책을 읽고 생각을 넓혀요",
+    "5-2-2. 공동체를 정의롭게!"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "[독서인문] 2026. 시군단위 좋은수업 실천연구 수업안(무안사랑초_5학년_도덕_김주선).pdf",
+  "filePath": "plans/aa7cf249260bc7062fab16eb6ec3d956c404b3938c81b78b470c92a1c835576b.pdf",
+  "fileSize": 392196,
+  "sha256": "aa7cf249260bc7062fab16eb6ec3d956c404b3938c81b78b470c92a1c835576b",
+  "previewText": "",
+  "author": "김주선",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192423",
+  "publishedAt": "2026-10-11T03:00:14.917Z",
+  "status": "approved"
+}
