@@ -1,0 +1,44 @@
+{
+  "id": "plan-e1d28e6943ae95e7f9343a696963132546c17e05cbab0ea290031134ce1643e1",
+  "title": "2026. 좋은수업-여수한려초-조경훈(1차-5학년 국어)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "원 게시물 등록일: 2026.04.16.",
+    "2026-10-11: 사용자 요청 및 재배포 허락 확인에 따라 학생 사진 없는 원본 한글 파일로 복원했습니다."
+  ],
+  "subject": "국어",
+  "unit": "5-1-2. 체험한 일을 글로 써요",
+  "normalizedUnit": "5-1-2.체험한일을글로써요",
+  "lessonNumber": "11/14",
+  "topic": "여정, 견문, 감상이 드러나는 기행문 쓰기",
+  "objectives": [],
+  "standards": [
+    "[6국04-05]",
+    "[6국03-03]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수한려초등학교",
+    "한려초",
+    "2026년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2026. 좋은수업-여수한려초-조경훈(1차-5학년 국어).hwp",
+  "filePath": "plans/e1d28e6943ae95e7f9343a696963132546c17e05cbab0ea290031134ce1643e1.hwp",
+  "fileSize": 3480064,
+  "sha256": "e1d28e6943ae95e7f9343a696963132546c17e05cbab0ea290031134ce1643e1",
+  "previewText": "",
+  "author": "조경훈",
+  "license": "자료 제공자가 여수한려초등학교 게시판 전체 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://hallyo.jge.es.kr/hallyo_es/na/ntt/selectNttInfo.do?mi=78718&bbsId=78718&nttSn=1801025104",
+  "publishedAt": "2026-10-11T08:50:42.711Z",
+  "status": "approved"
+}
