@@ -1,0 +1,39 @@
+{
+  "id": "plan-0d44ad5cebb255a6bf42df95a7b65b92b6782484dd38df32c4b97bfcbb2479d8",
+  "title": "2025 4학년 국어 · 낱말의 의미 관계 알기 (김지영, 공개용 PDF)",
+  "grades": [
+    4
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "개별 학생의 민감 문단을 삭제한 공개용 텍스트 정리본입니다. 원본 HWP의 표·그림 배치를 재현하지 않았으며 원본은 비공개로 보관합니다."
+  ],
+  "subject": "국어",
+  "unit": "3. 자세하게 살펴요",
+  "normalizedUnit": "3.자세하게살펴요",
+  "lessonNumber": "",
+  "topic": "낱말의 의미 관계 알기",
+  "objectives": [],
+  "standards": [],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2025년 게시",
+    "단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "공개용_낱말의_의미_관계_알기.pdf",
+  "filePath": "plans/0d44ad5cebb255a6bf42df95a7b65b92b6782484dd38df32c4b97bfcbb2479d8.pdf",
+  "fileSize": 112624,
+  "sha256": "0d44ad5cebb255a6bf42df95a7b65b92b6782484dd38df32c4b97bfcbb2479d8",
+  "previewText": "",
+  "author": "김지영",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1800626367",
+  "publishedAt": "2026-10-11T03:19:36.389Z",
+  "status": "approved"
+}

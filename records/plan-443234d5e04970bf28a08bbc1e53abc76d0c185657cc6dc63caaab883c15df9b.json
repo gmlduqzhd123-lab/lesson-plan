@@ -1,0 +1,43 @@
+{
+  "id": "plan-443234d5e04970bf28a08bbc1e53abc76d0c185657cc6dc63caaab883c15df9b",
+  "title": "2025 5학년 수학 · 펜토미노를 활용하여 만들 수 있는 직사각형의 종류 탐구하기 (허윤범, PDF)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "같은 게시물의 HWP와 함께 제공된 스캔 PDF입니다. 전체 5쪽을 시각 확인하여 분류했습니다."
+  ],
+  "subject": "수학",
+  "unit": "3. 펜토미노야 놀자",
+  "normalizedUnit": "3.펜토미노야놀자",
+  "lessonNumber": "",
+  "topic": "펜토미노를 활용하여 만들 수 있는 직사각형의 종류 탐구하기",
+  "objectives": [],
+  "standards": [
+    "[6수01-04]",
+    "[6수01-05]",
+    "[6수03-13]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2025년 게시",
+    "단원"
+  ],
+  "fileFormat": "PDF",
+  "originalFileName": "2025. 좋은수업 실천연구 공개수업안(수학, 허윤범).pdf",
+  "filePath": "plans/443234d5e04970bf28a08bbc1e53abc76d0c185657cc6dc63caaab883c15df9b.pdf",
+  "fileSize": 248472,
+  "sha256": "443234d5e04970bf28a08bbc1e53abc76d0c185657cc6dc63caaab883c15df9b",
+  "previewText": "",
+  "author": "허윤범",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1800675927",
+  "publishedAt": "2026-10-11T03:19:36.372Z",
+  "status": "approved"
+}

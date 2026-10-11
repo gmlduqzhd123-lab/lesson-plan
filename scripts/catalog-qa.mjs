@@ -33,7 +33,8 @@ try{
   checks.push(`홈·실제 자료실 ${width}px 표시·가로 넘침 없음`);
  }
  await page.getByLabel('학년',{exact:true}).selectOption('유아');await waitCount(records.filter(p=>p.educationLevel==='유아').length);
- await page.getByLabel('단원',{exact:true}).selectOption(records.find(p=>p.educationLevel==='유아').unit);await waitCount(1);checks.push('유아 학년·단원 동시 필터');
+ const kindergartenUnit=records.find(p=>p.educationLevel==='유아').unit;
+ await page.getByLabel('단원',{exact:true}).selectOption(kindergartenUnit);await waitCount(records.filter(p=>p.educationLevel==='유아'&&p.normalizedUnit===kindergartenUnit.normalize('NFKC').toLowerCase().replace(/\s+/g,'')).length);checks.push('유아 학년·단원 동시 필터');
  await page.getByRole('button',{name:'필터 초기화'}).click();await waitCount(records.length);
  await page.getByLabel('자료 유형',{exact:true}).selectOption('수업 보조자료');await waitCount(1);checks.push('보조자료 필터');
  await page.getByRole('button',{name:'필터 초기화'}).click();await waitCount(records.length);

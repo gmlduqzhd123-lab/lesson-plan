@@ -1,0 +1,41 @@
+{
+  "id": "plan-5a4c1cc3cbd35f43f18e08c12d7b47ef44749a1e36f1b8bc6d93bd8bdea9dfc1",
+  "title": "2025 5학년 수학 · 몬티홀 게임에서 수학적 확률 탐구하기 (허윤범, HWP)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [],
+  "subject": "수학",
+  "unit": "4. 확률의 세계",
+  "normalizedUnit": "4.확률의세계",
+  "lessonNumber": "",
+  "topic": "몬티홀 게임에서 수학적 확률 탐구하기",
+  "objectives": [],
+  "standards": [
+    "[6수04-04]",
+    "[6수04-05]",
+    "[6수04-06]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2025년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2025. 시군단위 좋은수업 실천연구 공개수업안(수학, 허윤범).hwp",
+  "filePath": "plans/5a4c1cc3cbd35f43f18e08c12d7b47ef44749a1e36f1b8bc6d93bd8bdea9dfc1.hwp",
+  "fileSize": 70144,
+  "sha256": "5a4c1cc3cbd35f43f18e08c12d7b47ef44749a1e36f1b8bc6d93bd8bdea9dfc1",
+  "previewText": "",
+  "author": "허윤범",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1800622365",
+  "publishedAt": "2026-10-11T03:19:36.394Z",
+  "status": "approved"
+}

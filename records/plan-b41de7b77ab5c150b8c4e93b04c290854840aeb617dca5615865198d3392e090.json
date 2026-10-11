@@ -1,0 +1,41 @@
+{
+  "id": "plan-b41de7b77ab5c150b8c4e93b04c290854840aeb617dca5615865198d3392e090",
+  "title": "2025 5학년 국어 · 낱말의 짜임 알기 (유희락, HWP)",
+  "grades": [
+    5
+  ],
+  "gradeBand": "",
+  "educationLevel": "초등",
+  "materialType": "지도안",
+  "classificationNotes": [
+    "문서 표지와 본시 단원 표기가 다릅니다. 표지의 “아는 것과 새롭게 안 것”으로 분류했습니다."
+  ],
+  "subject": "국어",
+  "unit": "8. 아는 것과 새롭게 안 것",
+  "normalizedUnit": "8.아는것과새롭게안것",
+  "lessonNumber": "1/9",
+  "topic": "낱말의 짜임 알기",
+  "objectives": [],
+  "standards": [
+    "[6국04-02]"
+  ],
+  "curriculum": "",
+  "teachingModel": "",
+  "duration": "",
+  "keywords": [
+    "여수교육지원청",
+    "2025년 게시",
+    "단원"
+  ],
+  "fileFormat": "HWP",
+  "originalFileName": "2025.좋은수업실천연구(1차_국어_유희락).hwp",
+  "filePath": "plans/b41de7b77ab5c150b8c4e93b04c290854840aeb617dca5615865198d3392e090.hwp",
+  "fileSize": 44032,
+  "sha256": "b41de7b77ab5c150b8c4e93b04c290854840aeb617dca5615865198d3392e090",
+  "previewText": "",
+  "author": "유희락",
+  "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
+  "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1800665521",
+  "publishedAt": "2026-10-11T03:19:36.382Z",
+  "status": "approved"
+}
