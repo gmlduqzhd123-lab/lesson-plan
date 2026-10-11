@@ -173,46 +173,6 @@
     "status": "approved"
   },
   {
-    "id": "plan-43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43",
-    "title": "2022학년도도원초수업공개관련서식",
-    "grades": [
-      6
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "수업 보조자료",
-    "classificationNotes": [
-      "실제 대상 학년을 확인해 본문의 선수학습·그림책 수준에서 언급한 유치원과 구분했습니다.",
-      "수업 내용이 빈 서식과 예시 표지입니다. 완성된 개별 지도안 대신 수업 보조자료로 분류했습니다."
-    ],
-    "subject": "기타",
-    "unit": "교내 수업 공개 관련 서식",
-    "normalizedUnit": "교내수업공개관련서식",
-    "lessonNumber": "7/9",
-    "topic": "교수학습과정안·참관 기록 서식",
-    "objectives": [],
-    "standards": [],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2022년 게시",
-      "놀이 주제"
-    ],
-    "fileFormat": "HWP",
-    "originalFileName": "2022학년도도원초수업공개관련서식.hwp",
-    "filePath": "plans/43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43.hwp",
-    "fileSize": 143872,
-    "sha256": "43b4dd0e7a60688747954458e412e4439bb375b26c4d1b00c929bedf22bc6e43",
-    "previewText": "",
-    "author": "정금자",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1783138",
-    "publishedAt": "2026-10-11T04:03:29.066Z",
-    "status": "approved"
-  },
-  {
     "id": "plan-98948dc9e7bddc53b718fc7b3236a5c45a2a12604c487711590ced8df480c6fe",
     "title": "2022.1차좋은수업실천연구사회과4학년수업안",
     "grades": [
@@ -9299,50 +9259,6 @@
     "status": "approved"
   },
   {
-    "id": "plan-091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5",
-    "title": "씽킹맵학습지(버블맵)",
-    "grades": [
-      3
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "수업 보조자료",
-    "classificationNotes": [
-      "같은 게시물의 지도안과 함께 제공된 자료입니다. 명시 정보가 없는 분류는 해당 지도안에서 확인했습니다.",
-      "원 게시물 등록일: 2022.05.03."
-    ],
-    "subject": "국어",
-    "unit": "5. 중요한 내용을 적어요",
-    "normalizedUnit": "5.중요한내용을적어요",
-    "lessonNumber": "",
-    "topic": "내용을 간추리며 듣기",
-    "objectives": [],
-    "standards": [
-      "[4국01-05]",
-      "[4국02-02]",
-      "[4국04-02]"
-    ],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2022년 게시",
-      "단원"
-    ],
-    "fileFormat": "HWP",
-    "originalFileName": "씽킹맵학습지(버블맵).hwp",
-    "filePath": "plans/091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5.hwp",
-    "fileSize": 15360,
-    "sha256": "091bd12f54e71e0fc5b016102095bd0fc79b7e3996dca1b70abc95f58814fbd5",
-    "previewText": "",
-    "author": "허윤범",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1788741",
-    "publishedAt": "2026-10-11T04:01:12.961Z",
-    "status": "approved"
-  },
-  {
     "id": "plan-f1059fc229e09e67474d23e5b6e4775bfd2b4e6cc574e47d386ac8681fbfc3c3",
     "title": "도블게임방법",
     "grades": [
@@ -14304,84 +14220,6 @@
     "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
     "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1790733",
     "publishedAt": "2026-10-11T04:00:32.578Z",
-    "status": "approved"
-  },
-  {
-    "id": "plan-92bb229f7d2b8d70cdb77344802bc1813c4ce0fad39a343d0b1d3fc3c0b52153",
-    "title": "2022.좋은수업실천연구(장지환1차)-등록부,협의록,참관록",
-    "grades": [
-      6
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "지도안",
-    "classificationNotes": [
-      "원 게시물 등록일: 2022.05.13."
-    ],
-    "subject": "국어",
-    "unit": "5. 속담을 활용해요",
-    "normalizedUnit": "5.속담을활용해요",
-    "lessonNumber": "",
-    "topic": "속담을 활용해 자신의 생각 표현하기",
-    "objectives": [],
-    "standards": [],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2022년 게시",
-      "단원"
-    ],
-    "fileFormat": "PDF",
-    "originalFileName": "2022.좋은수업실천연구(장지환1차)-등록부,협의록,참관록.pdf",
-    "filePath": "plans/92bb229f7d2b8d70cdb77344802bc1813c4ce0fad39a343d0b1d3fc3c0b52153.pdf",
-    "fileSize": 273612,
-    "sha256": "92bb229f7d2b8d70cdb77344802bc1813c4ce0fad39a343d0b1d3fc3c0b52153",
-    "previewText": "",
-    "author": "장지환",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1790733",
-    "publishedAt": "2026-10-11T04:00:32.571Z",
-    "status": "approved"
-  },
-  {
-    "id": "plan-b13ecc5b551755a4675ef369e32d9cf197e3331fa18411c672c112783a132c28",
-    "title": "2022.5.18민주화운동주간운영계획",
-    "grades": [
-      6
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "지도안",
-    "classificationNotes": [
-      "원 게시물 등록일: 2022.05.13."
-    ],
-    "subject": "국어",
-    "unit": "5. 속담을 활용해요",
-    "normalizedUnit": "5.속담을활용해요",
-    "lessonNumber": "",
-    "topic": "오월정신, 평화와 연대로 이어가겠습니다.",
-    "objectives": [],
-    "standards": [],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2022년 게시",
-      "단원"
-    ],
-    "fileFormat": "HWP",
-    "originalFileName": "2022.5.18민주화운동주간운영계획.hwp",
-    "filePath": "plans/b13ecc5b551755a4675ef369e32d9cf197e3331fa18411c672c112783a132c28.hwp",
-    "fileSize": 1763328,
-    "sha256": "b13ecc5b551755a4675ef369e32d9cf197e3331fa18411c672c112783a132c28",
-    "previewText": "",
-    "author": "장지환",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1790733",
-    "publishedAt": "2026-10-11T04:00:32.565Z",
     "status": "approved"
   },
   {
@@ -56556,47 +56394,6 @@
     "status": "approved"
   },
   {
-    "id": "plan-2ceb2834bc99133c49ee4ebeefe734968cbd055270aae3734ccf81a8964fde2d",
-    "title": "2학년2학기통합가을(가을)",
-    "grades": [
-      2
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "수업 보조자료",
-    "classificationNotes": [
-      "학생별 통합교과 성취 내용을 정리한 참고 자료입니다. 실명은 기재되어 있지 않습니다.",
-      "분류 예외 항목을 원문의 표지·본문 또는 게시글과 대조하여 수정했습니다.",
-      "원 게시물 등록일: 2022.11.09."
-    ],
-    "subject": "통합교과",
-    "unit": "가을",
-    "normalizedUnit": "가을",
-    "lessonNumber": "",
-    "topic": "",
-    "objectives": [],
-    "standards": [],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2022년 게시",
-      "단원"
-    ],
-    "fileFormat": "HWP",
-    "originalFileName": "2학년2학기통합가을(가을).hwp",
-    "filePath": "plans/2ceb2834bc99133c49ee4ebeefe734968cbd055270aae3734ccf81a8964fde2d.hwp",
-    "fileSize": 33280,
-    "sha256": "2ceb2834bc99133c49ee4ebeefe734968cbd055270aae3734ccf81a8964fde2d",
-    "previewText": "",
-    "author": "강미경",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1816452",
-    "publishedAt": "2026-10-11T03:55:55.219Z",
-    "status": "approved"
-  },
-  {
     "id": "plan-6ac7cf66a2c82d0fe80a42f556d764e9eac91fdddb668a487ea05abdce7878aa",
     "title": "2022.좋은수업-쌍봉초등학교-추국현(2차,과학)",
     "grades": [
@@ -58831,52 +58628,6 @@
     "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
     "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1838178",
     "publishedAt": "2026-10-11T03:55:47.577Z",
-    "status": "approved"
-  },
-  {
-    "id": "plan-0c13c59d9d3ff6346068493955dfca8573e349ba839b3a3baf2df93fa6773c36",
-    "title": "가족구성원조사학습지",
-    "grades": [
-      2
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "수업 보조자료",
-    "classificationNotes": [
-      "같은 게시물의 지도안과 함께 제공된 자료입니다. 명시 정보가 없는 분류는 해당 지도안에서 확인했습니다.",
-      "원 게시물 등록일: 2023.04.17."
-    ],
-    "subject": "통합교과",
-    "unit": "여름 2-1-1. 이런 집 저런 집",
-    "normalizedUnit": "여름2-1-1.이런집저런집",
-    "lessonNumber": "",
-    "topic": "여러 형태의 가족 조사하기",
-    "objectives": [],
-    "standards": [
-      "[2바03-02]",
-      "[2슬03-03]",
-      "[2슬03-04]",
-      "[2즐03-03]",
-      "[2즐03-04]"
-    ],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "여수교육지원청",
-      "2023년 게시",
-      "단원"
-    ],
-    "fileFormat": "HWP",
-    "originalFileName": "가족구성원조사학습지.hwp",
-    "filePath": "plans/0c13c59d9d3ff6346068493955dfca8573e349ba839b3a3baf2df93fa6773c36.hwp",
-    "fileSize": 45568,
-    "sha256": "0c13c59d9d3ff6346068493955dfca8573e349ba839b3a3baf2df93fa6773c36",
-    "previewText": "",
-    "author": "허윤범",
-    "license": "자료 제공자가 여수교육지원청 2022·2023년 자료의 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://ysed.jge.go.kr/ysed/na/ntt/selectNttInfo.do?mi=10648&bbsId=10648&nttSn=1838178",
-    "publishedAt": "2026-10-11T03:55:47.573Z",
     "status": "approved"
   },
   {
@@ -68709,43 +68460,6 @@
     "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
     "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192196",
     "publishedAt": "2026-10-11T03:00:14.958Z",
-    "status": "approved"
-  },
-  {
-    "id": "plan-ed0c2fa95095078494fb9fdf11e3ece22ceace1c23b966ac43e98f958d058b0e",
-    "title": "역사신문자료",
-    "grades": [
-      5
-    ],
-    "gradeBand": "",
-    "educationLevel": "초등",
-    "materialType": "수업 보조자료",
-    "classificationNotes": [
-      "본문의 독립 단원 표기가 없어 같은 게시글 지도안의 학년·교과·단원을 연결함"
-    ],
-    "subject": "사회",
-    "unit": "5-2-1. 유적과 유물로 살펴본 옛 사람들의 생활",
-    "normalizedUnit": "5-2-1.유적과유물로살펴본옛사람들의생활",
-    "lessonNumber": "",
-    "topic": "후삼국의 혼란 극복과 고려의 건국 정책 제안하기",
-    "objectives": [],
-    "standards": [],
-    "curriculum": "",
-    "teachingModel": "",
-    "duration": "",
-    "keywords": [
-      "단원"
-    ],
-    "fileFormat": "PDF",
-    "originalFileName": "역사신문자료.pdf",
-    "filePath": "plans/ed0c2fa95095078494fb9fdf11e3ece22ceace1c23b966ac43e98f958d058b0e.pdf",
-    "fileSize": 4214858,
-    "sha256": "ed0c2fa95095078494fb9fdf11e3ece22ceace1c23b966ac43e98f958d058b0e",
-    "previewText": "",
-    "author": "김화민",
-    "license": "자료 제공자가 재배포 허락을 확인함(2026-10-11). 기타 이용 범위는 원저작자에게 확인해주세요.",
-    "source": "https://www.jge.go.kr/jgesse/na/ntt/selectNttInfo.do?mi=2673&bbsId=964&nttSn=5192205",
-    "publishedAt": "2026-10-11T03:00:14.951Z",
     "status": "approved"
   },
   {
