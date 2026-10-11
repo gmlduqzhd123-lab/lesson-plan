@@ -1,6 +1,6 @@
-# 엽쌤 지도안 라이브러리
+# 지도안 대백과
 
-YSSchool Lesson Plan Library — 초등·유아 교수학습과정안 검색, 브라우저 내 지도안 파일 분석, 관리자 검토 후 공개하는 정적 웹앱입니다.
+Lesson Plan Encyclopedia — 초등·유아 교수학습과정안 검색, 브라우저 내 지도안 파일 분석, 관리자 검토 후 공개하는 정적 웹앱입니다.
 
 - 저장소: https://github.com/gmlduqzhd123-lab/lesson-plan
 - 공개 사이트: https://gmlduqzhd123-lab.github.io/lesson-plan/
