@@ -6,10 +6,10 @@ import LibraryPage from './pages/LibraryPage';
 import Detail from './pages/Detail';
 import About from './pages/About';
 import { useCatalog } from './hooks/useCatalog';
+import AccessGate from './components/AccessGate';
 const Upload = lazy(() => import('./pages/Upload'));
 
-function Shell() {
-  const catalog = useCatalog();
+function Shell({ catalog }: { catalog: ReturnType<typeof useCatalog> }) {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
   useEffect(() => { setMenu(false); window.scrollTo(0, 0); }, [location.pathname]);
@@ -17,4 +17,7 @@ function Shell() {
     <main id="main-content" tabIndex={-1}><Suspense fallback={<div className="container status" role="status">화면을 불러오고 있어요.</div>}><Routes><Route path="/" element={<Home {...catalog} />} /><Route path="/library" element={<LibraryPage {...catalog} />} /><Route path="/library/:id" element={<Detail {...catalog} />} /><Route path="/upload" element={<Upload publishedPlans={catalog.plans} />} /><Route path="/about" element={<About />} /><Route path="*" element={<div className="container page empty-state"><h1>페이지를 찾을 수 없어요</h1><Link className="button primary" to="/">홈으로 이동</Link></div>} /></Routes></Suspense></main>
     <footer className="footer"><div className="container footer-inner"><div><Link className="footer-brand" to="/"><BookOpen size={20} /> 지도안 대백과</Link><p>선생님의 경험을 나누고, 함께 더 좋은 수업을 만듭니다.</p><small>© 2026 엽쌤. All rights reserved. · <a className="footer-hub" href="https://gmlduqzhd123-lab.github.io/YScode/">엽쌤의 다른 앱 보기 →</a></small></div><div className="footer-links"><Link to="/about">이용 안내</Link><Link to="/upload">자료 분석·제출</Link><a href="https://github.com/gmlduqzhd123-lab/lesson-plan" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></div></div></footer></>;
 }
-export default function App() { return <HashRouter><Shell /></HashRouter>; }
+export default function App() {
+  const catalog = useCatalog();
+  return <HashRouter><AccessGate catalog={catalog}><Shell catalog={catalog} /></AccessGate></HashRouter>;
+}
