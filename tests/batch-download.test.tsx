@@ -79,3 +79,19 @@ it('selects only displayed cards, keeps selections across filters and removes hi
   fireEvent.click(screen.getByRole('button',{name:'선택 해제'}));
   expect((screen.getByRole('button',{name:'선택 자료 다운로드'}) as HTMLButtonElement).disabled).toBe(true);
 });
+it('selects every filtered result beyond displayed cards, preserves other selections and deduplicates repeated selection', () => {
+  const many = Array.from({length:65}, (_,i) => ({...plans[0],id:`plan-${String(i).padStart(64,'0')}`,title:`자료 ${i}`,grades:[i===64?6:5]}));
+  render(<MemoryRouter><LibraryPage plans={many} loading={false} error="" retry={vi.fn()} /></MemoryRouter>);
+  fireEvent.change(screen.getByLabelText('학년'),{target:{value:'5'}});
+  expect(screen.getAllByRole('checkbox')).toHaveLength(60);
+  fireEvent.click(screen.getByRole('button',{name:'검색 결과 전체 선택 (64개)'}));
+  expect(screen.getByText('선택한 자료 64개')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button',{name:'검색 결과 전체 선택 (64개)'}));
+  expect(screen.getByText('선택한 자료 64개')).toBeTruthy();
+  fireEvent.change(screen.getByLabelText('학년'),{target:{value:'6'}});
+  fireEvent.click(screen.getByRole('button',{name:'검색 결과 전체 선택 (1개)'}));
+  expect(screen.getByText('선택한 자료 65개')).toBeTruthy();
+  fireEvent.change(screen.getByLabelText('자료 검색'),{target:{value:'없음'}});
+  expect((screen.getByRole('button',{name:'검색 결과 전체 선택 (0개)'}) as HTMLButtonElement).disabled).toBe(true);
+  expect(screen.getByText('선택한 자료 65개')).toBeTruthy();
+});
