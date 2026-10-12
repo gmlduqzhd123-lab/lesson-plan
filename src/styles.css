@@ -15,3 +15,16 @@ fieldset.editor{min-width:0;margin-inline:0;width:100%}
 @media(min-width:761px) and (max-width:900px){.brand small{display:none}.header nav{font-size:13px;gap:12px}}
 @media(max-width:760px){.header-inner{gap:10px}.header-actions{gap:6px;margin-left:auto}.app-chip{padding:7px 10px;font-size:12px}}
 @media(max-width:420px){.chip-wide{display:none}.brand small{display:none}.app-chip{padding:7px 9px}}
+
+/* UX enhancements: Sticky panel, preview copy, share link, floating top scroll */
+@media(min-width:1001px){.download-panel{position:sticky;top:24px}}
+.preview-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.preview-copy-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;font-size:12px;font-weight:600;border-radius:8px;border:1px solid #dce5f2;background:#fff;color:#4a6785;cursor:pointer;transition:all .2s;white-space:nowrap}
+.preview-copy-btn:hover{background:#f0f6ff;border-color:#99b9e9;color:var(--blue)}
+.preview-copy-btn.copied{background:#edf8f3;border-color:#a7f3d0;color:#047857}
+.share-link-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:10px;padding:11px 16px;font-size:13px;font-weight:600;border-radius:9px;border:1px solid #dce5f2;background:#fff;color:#4a6785;cursor:pointer;transition:all .2s}
+.share-link-btn:hover{background:#f7faff;border-color:#99b9e9;color:var(--blue)}
+.share-link-btn.copied{background:#edf8f3;border-color:#a7f3d0;color:#047857}
+.scroll-top-btn{position:fixed;bottom:28px;right:28px;z-index:40;display:inline-flex;align-items:center;gap:6px;padding:11px 18px;background:#fff;color:#3b5a82;border:1px solid #ccdcee;border-radius:30px;box-shadow:0 6px 20px #25374d26;font-size:13px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s}
+.scroll-top-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #25374d38;background:#f8fbff;color:var(--blue)}
+@media(max-width:760px){.scroll-top-btn{bottom:20px;right:20px;padding:9px 14px;font-size:12px}}

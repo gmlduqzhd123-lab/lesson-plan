@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { ArrowUp, Search, SlidersHorizontal, X } from 'lucide-react';
 import { SUBJECTS, TEACHING_MODELS } from '../../shared/schema.mjs';
 import { searchPlans, matchesGrade } from '../lib/search';
 import { CatalogStatus, EmptyState, PlanCard } from '../components/Library';
@@ -10,6 +10,16 @@ export default function LibraryPage(props: { plans: Plan[]; loading: boolean; er
   const [params, setParams] = useSearchParams();
   const filterKey = params.toString();
   const [display, setDisplay] = useState({ key: filterKey, count: 60 });
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowTopBtn(window.scrollY > 350);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   if (display.key !== filterKey) setDisplay({ key: filterKey, count: 60 });
   const visibleCount = display.key === filterKey ? display.count : 60;
   const f = { query: params.get('q') || '', grade: params.get('grade') || '', subject: params.get('subject') || '', unit: params.get('unit') || '', sort: params.get('sort') || 'latest', materialType: params.get('materialType') || '', teachingModel: params.get('teachingModel') || '' };
@@ -27,7 +37,8 @@ export default function LibraryPage(props: { plans: Plan[]; loading: boolean; er
     </aside><div className="results"><form className="searchbox library-search" onSubmit={e => e.preventDefault()}><Search size={21} /><input aria-label="자료 검색" placeholder="제목, 학습 주제, 성취기준으로 검색" value={f.query} onChange={e => change('q', e.target.value)} />{f.query && <button type="button" aria-label="검색어 지우기" onClick={() => change('q', '')}><X size={18} /></button>}</form>
       {(f.grade || f.subject || f.teachingModel || f.unit || f.query || f.materialType) && <div className="active-filters">{[['q', f.query], ['grade', f.grade && (f.grade === '유아' ? '유아' : `${f.grade}학년`)], ['subject', f.subject], ['teachingModel', f.teachingModel], ['unit', f.unit], ['materialType', f.materialType]].filter(([, v]) => v).map(([k, v]) => <button key={k} onClick={() => change(k, '')}>{v}<X size={13} /></button>)}</div>}
       <div className="results-toolbar"><span>검색 결과 <strong>{props.loading || props.error ? '—' : result.length}</strong>개</span><select aria-label="정렬" value={f.sort} onChange={e => change('sort', e.target.value)}><option value="latest">최신순</option><option value="title">제목순</option><option value="grade">학년순</option><option value="subject">교과순</option></select></div>
-      <CatalogStatus {...props} />{!props.loading && !props.error && (result.length ? <><div className="card-grid library-cards">{result.slice(0, visibleCount).map(p => <PlanCard key={p.id} plan={p} />)}</div>{result.length > visibleCount && <div className="results-toolbar"><span>{visibleCount} / {result.length}개 표시</span><button className="button secondary" onClick={() => setDisplay({ key: filterKey, count: visibleCount + 60 })}>자료 더 보기</button></div>}</> : <EmptyState filtered={props.plans.length > 0 || !!(f.query || f.grade || f.subject || f.teachingModel || f.unit || f.materialType)} />)}
+      <CatalogStatus {...props} />{!props.loading && !props.error && (result.length ? <><div className="card-grid library-cards">{result.slice(0, visibleCount).map(p => <PlanCard key={p.id} plan={p} />)}</div>{result.length > visibleCount && <div className="results-toolbar"><span>{visibleCount} / {result.length}개 표시</span><button className="button secondary" onClick={() => setDisplay({ key: filterKey, count: visibleCount + 60 })}>자료 더 보기</button></div>}</> : <EmptyState filtered={props.plans.length > 0 || !!(f.query || f.grade || f.subject || f.teachingModel || f.unit || f.materialType)} onReset={() => setParams({})} />)}
     </div></div>
+    {showTopBtn && <button type="button" className="scroll-top-btn" onClick={scrollToTop} aria-label="맨 위로 이동"><ArrowUp size={18} /> 맨 위로</button>}
   </div>;
 }
