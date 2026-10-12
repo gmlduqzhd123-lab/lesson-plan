@@ -2,12 +2,13 @@ import JSZip from 'jszip';
 import { ManifestSchema, PlanSchema, LIMITS } from '../../shared/schema.mjs';
 import type { Draft } from '../types';
 import { hashFile } from './parsers/analyze';
+import { createUuid } from './uuid';
 
 export async function createSubmission(drafts: Draft[], declarations: { privacy: boolean; copyright: boolean }) {
   if (!drafts.length || drafts.some(d => d.state !== '완료' || !d.plan)) throw new Error('실패·중복 파일을 제거하고 분석을 완료해주세요.');
   if (!declarations.privacy || !declarations.copyright) throw new Error('개인정보 및 저작권 확인이 필요합니다.');
   if (drafts.length > LIMITS.files || drafts.reduce((total, d) => total + d.file.size, 0) > LIMITS.batch) throw new Error('제출 개수 또는 전체 파일 크기 제한을 초과했습니다.');
-  const submissionId = `submission-${crypto.randomUUID()}`;
+  const submissionId = `submission-${createUuid()}`;
   const entries = [];
   const zip = new JSZip();
   const seen = new Set();

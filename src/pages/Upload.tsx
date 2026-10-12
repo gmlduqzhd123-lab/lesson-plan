@@ -5,6 +5,7 @@ import { analyzeFile } from '../lib/parsers/analyze';
 import { createSubmission } from '../lib/submission';
 import { saveBlob } from '../lib/download';
 import { reconcileDuplicates } from '../lib/drafts';
+import { createUuid } from '../lib/uuid';
 import type { Draft, Plan } from '../types';
 
 export default function Upload({ publishedPlans }: { publishedPlans: Plan[] }) {
@@ -24,7 +25,9 @@ export default function Upload({ publishedPlans }: { publishedPlans: Plan[] }) {
     if (processing.current || !files.length) return;
     setError(''); setNotice(''); setPrivacy(false); setCopyright(false);
     if (drafts.length + files.length > LIMITS.files || drafts.reduce((n, d) => n + d.file.size, 0) + files.reduce((n, f) => n + f.size, 0) > LIMITS.batch) { setError('한 번에 최대 30개, 전체 100MiB까지 분석할 수 있습니다.'); return; }
-    const queue: Draft[] = files.map(file => ({ key: crypto.randomUUID(), file, state: '대기' }));
+    let queue: Draft[];
+    try { queue = files.map(file => ({ key: createUuid(), file, state: '대기' })); }
+    catch (e) { setError(e instanceof Error ? e.message : '파일 처리를 시작하지 못했습니다. 다시 시도해주세요.'); return; }
     setDrafts(ds => [...ds, ...queue]); setBusy(true); processing.current = true;
     const hashes = new Set([...drafts.filter(d => d.state === '완료').map(d => d.plan?.sha256), ...publishedPlans.map(p => p.sha256)]);
     try {
