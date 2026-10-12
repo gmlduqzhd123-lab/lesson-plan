@@ -1,11 +1,11 @@
-import { ArrowRight, BookOpen, FileText, SearchX } from 'lucide-react';
+import { ArrowRight, BookOpen, FileText, SearchX, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Plan } from '../types';
 
 export const gradeLabel = (p: Plan) => p.educationLevel === '유아' ? '유아' : p.grades.length ? p.grades.map(g => `${g}학년`).join(' · ') : p.gradeBand || '학년 미분류';
 export function PlanCard({ plan: p }: { plan: Plan }) {
   return <Link className="plan-card" to={`/library/${p.id}`}>
-    <div className="card-top"><span className="tag blue">{gradeLabel(p)}</span><span className="tag mint">{p.subject}</span><span className="format">{p.fileFormat}</span></div>
+    <div className="card-top"><span className="tag blue">{gradeLabel(p)}</span><span className="tag mint">{p.subject}</span>{p.teachingModel && <span className="tag purple">{p.teachingModel}</span>}<span className="tag trust"><ShieldCheck size={11} /> 안심 검토</span><span className="format">{p.fileFormat}</span></div>
     {p.materialType === '수업 보조자료' && <span className="tag">수업 보조자료</span>}
     <div className="card-icon"><FileText size={24} /></div><h3>{p.title}</h3>
     <p>{p.unit || '단원 미분류'}{p.lessonNumber ? ` · ${p.lessonNumber}` : ''}</p><p className="card-topic">{p.topic || '학습 주제는 상세정보에서 확인하세요.'}</p>

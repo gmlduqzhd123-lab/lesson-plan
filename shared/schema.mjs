@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 export const SUBJECTS = ['국어', '수학', '사회', '과학', '영어', '도덕', '체육', '음악', '미술', '실과', '통합교과', '창의적 체험활동', '유아교육', '기타'];
+export const TEACHING_MODELS = ['문제해결학습', '탐구학습', '개념형성학습', '원리탐구학습', '토의·토론학습', '협동학습', '놀이중심수업', '프로젝트학습', '경험학습', '직접교수법', '반응중심학습'];
 export const LIMITS = Object.freeze({ file: 32 * 1024 ** 2, batch: 100 * 1024 ** 2, expanded: 160 * 1024 ** 2, entry: 36 * 1024 ** 2, entries: 2000, files: 30, text: 300000 });
 const short = z.string().max(500);
 const list = z.array(short).max(100);
