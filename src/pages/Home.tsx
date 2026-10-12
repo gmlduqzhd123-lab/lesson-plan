@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, BookOpen, Check, FileText, Search, ShieldCheck, Sparkles } from 'lucide-react';
 import { SUBJECTS } from '../../shared/schema.mjs';
 import { PlanCard, EmptyState, CatalogStatus } from '../components/Library';
+import { getLessonDate } from '../lib/search';
 import type { Plan } from '../types';
 
 const GRADES: { grade: number | '유아'; label: string; numberLabel: string; deco: string; className: string }[] = [
@@ -37,7 +38,7 @@ export default function Home(props: Props) {
         <div className="subject-row"><strong>교과로 찾기</strong><div>{SUBJECTS.map(s => <Link key={s} to={`/library?subject=${encodeURIComponent(s)}`}>{s}</Link>)}</div></div>
       </section>
       <section className="section latest"><div className="section-heading"><div><span className="overline">LESSON PLAN LIBRARY</span><h2>새로 만나는 수업 아이디어</h2><p>선생님들이 나눈 최신 교수학습과정안을 확인하세요.</p></div><Link className="text-link" to="/library">더 보기 <ArrowRight size={16} /></Link></div>
-        <CatalogStatus {...props} />{!props.loading && !props.error && (props.plans.length ? <div className="card-grid">{[...props.plans].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, 6).map(p => <PlanCard key={p.id} plan={p} />)}</div> : <EmptyState />)}
+        <CatalogStatus {...props} />{!props.loading && !props.error && (props.plans.length ? <div className="card-grid">{[...props.plans].sort((a, b) => getLessonDate(b).localeCompare(getLessonDate(a)) || b.publishedAt.localeCompare(a.publishedAt)).slice(0, 6).map(p => <PlanCard key={p.id} plan={p} />)}</div> : <EmptyState />)}
       </section>
       <section className="share-banner"><span className="share-symbol"><FileText size={32} /><Sparkles size={20} /></span><div><span className="overline">BETTER TOGETHER</span><h2>선생님의 좋은 수업을 나눠주세요</h2><p>한글 파일을 분석하고, 분류를 확인한 뒤 제출 패키지를 만들 수 있어요.</p></div><Link className="button primary" to="/upload">지도안 분석·제출 <ArrowRight size={17} /></Link></section>
     </div>
