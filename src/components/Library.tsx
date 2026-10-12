@@ -4,16 +4,17 @@ import { getLessonDate } from '../lib/search';
 import type { Plan } from '../types';
 
 export const gradeLabel = (p: Plan) => p.educationLevel === '유아' ? '유아' : p.grades.length ? p.grades.map(g => `${g}학년`).join(' · ') : p.gradeBand || '학년 미분류';
-export function PlanCard({ plan: p }: { plan: Plan }) {
+export function PlanCard({ plan: p, selection }: { plan: Plan; selection?: { checked: boolean; disabled: boolean; toggle: () => void } }) {
   const lessonDate = getLessonDate(p);
   const dateText = lessonDate && lessonDate !== '2020-01-01' ? lessonDate.replace(/-/g, '. ') : new Date(p.publishedAt).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
-  return <Link className="plan-card" to={`/library/${p.id}`}>
+  const card = <Link className="plan-card" to={`/library/${p.id}`}>
     <div className="card-top"><span className="tag blue">{gradeLabel(p)}</span><span className="tag mint">{p.subject}</span>{p.teachingModel && <span className="tag purple">{p.teachingModel}</span>}<span className="tag trust"><ShieldCheck size={11} /> 안심 검토</span><span className="format">{p.fileFormat}</span></div>
     {p.materialType === '수업 보조자료' && <span className="tag">수업 보조자료</span>}
     <div className="card-icon"><FileText size={24} /></div><h3>{p.title}</h3>
     <p>{p.unit || '단원 미분류'}{p.lessonNumber ? ` · ${p.lessonNumber}` : ''}</p><p className="card-topic">{p.topic || '학습 주제는 상세정보에서 확인하세요.'}</p>
     <div className="card-footer"><span>{dateText}</span><span>자료 보기 <ArrowRight size={16} /></span></div>
   </Link>;
+  return selection ? <div className={`selectable-plan ${selection.checked ? 'is-selected' : ''}`}><label className="plan-select"><input type="checkbox" aria-label={`${p.title} 다운로드 선택`} checked={selection.checked} disabled={selection.disabled} onChange={selection.toggle} />다운로드 선택</label>{card}</div> : card;
 }
 export function EmptyState({ filtered = false, onReset }: { filtered?: boolean; onReset?: () => void }) {
   return <div className="empty-state"><div className="empty-icon">{filtered ? <SearchX size={32} /> : <BookOpen size={32} />}</div>
