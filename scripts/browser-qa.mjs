@@ -13,7 +13,7 @@ const browser = await chromium.launch({ executablePath, headless: true });
 const report = { url: origin, checks: [], consoleErrors: [], failedRequests: [], screenshots: [], externalRequests: [], writeRequests: [] };
 const check = (name) => { report.checks.push(name); console.log(`PASS ${name}`); };
 try {
-  const context = await browser.newContext({ acceptDownloads: true });
+  const context = await browser.newContext({ acceptDownloads: true, serviceWorkers: 'block' });
   const page = await context.newPage();
   await page.route('**/catalog/index.json', route => route.fulfill({ json: [] }));
   page.on('request', request => {

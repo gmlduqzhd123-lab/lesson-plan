@@ -15,6 +15,10 @@ const submission = unpackSubmission(await fs.readFile(zip));
 const root = await fs.mkdtemp(path.join(ROOT, '.tmp', 'integration-'));
 for (const dir of ['scripts', 'shared']) await fs.cp(path.join(ROOT, dir), path.join(root, dir), { recursive: true });
 await fs.cp(path.join(ROOT, 'dist'), path.join(root, 'public'), { recursive: true });
+await fs.rm(path.join(root, 'public', 'plans'), { recursive: true, force: true });
+await fs.mkdir(path.join(root, 'public', 'plans'), { recursive: true });
+await fs.mkdir(path.join(root, 'public', 'catalog'), { recursive: true });
+await fs.writeFile(path.join(root, 'public', 'catalog', 'index.json'), '[]\n');
 const run = (name, ...args) => {
   const result = spawnSync(process.execPath, [path.join(root, 'scripts', name), ...args], { cwd: root, encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr);
@@ -41,7 +45,8 @@ await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const browser = await chromium.launch({ executablePath: process.env.BROWSER_PATH || (process.platform === 'win32' ? 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' : undefined), headless: true });
 const report = { scope: 'isolated real static HTTP, browser-generated ZIP, no route mocks, no public production records', checks: [], errors: [] };
 try {
-  const page = await browser.newPage({ acceptDownloads: true });
+  const context = await browser.newContext({ acceptDownloads: true, serviceWorkers: 'block' });
+  const page = await context.newPage();
   page.on('pageerror', error => report.errors.push(error.message));
   const origin = `http://127.0.0.1:${server.address().port}/lesson-plan/`;
   await page.goto(`${origin}#/library`);

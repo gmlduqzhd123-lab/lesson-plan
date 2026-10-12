@@ -5,6 +5,16 @@ import { SUBJECTS } from '../../shared/schema.mjs';
 import { PlanCard, EmptyState, CatalogStatus } from '../components/Library';
 import type { Plan } from '../types';
 
+const GRADES: { grade: number | '유아'; label: string; numberLabel: string; deco: string; className: string }[] = [
+  { grade: '유아', label: '유아', numberLabel: '00', deco: '☘', className: 'grade-0' },
+  { grade: 1, label: '1학년', numberLabel: '01', deco: '◒', className: 'grade-1' },
+  { grade: 2, label: '2학년', numberLabel: '02', deco: '✿', className: 'grade-2' },
+  { grade: 3, label: '3학년', numberLabel: '03', deco: '◆', className: 'grade-3' },
+  { grade: 4, label: '4학년', numberLabel: '04', deco: '✦', className: 'grade-4' },
+  { grade: 5, label: '5학년', numberLabel: '05', deco: '◈', className: 'grade-5' },
+  { grade: 6, label: '6학년', numberLabel: '06', deco: '◉', className: 'grade-6' },
+];
+
 type Props = { plans: Plan[]; loading: boolean; error: string; retry: () => void };
 export default function Home(props: Props) {
   const [query, setQuery] = useState('');
@@ -23,7 +33,7 @@ export default function Home(props: Props) {
     <div className="container">
       <div className="stats-strip"><div><span className="stat-icon"><BookOpen size={21} /></span><span>공개 지도안 <strong>{props.loading || props.error ? '—' : props.plans.length}<small>개</small></strong></span></div><p>선생님의 경험이 다른 교실의 좋은 수업이 됩니다.</p><Link to="/upload">내 지도안 나누기 <ArrowRight size={17} /></Link></div>
       <section className="section"><div className="section-heading"><div><span className="overline">FIND YOUR CLASS</span><h2>우리 반 수업, 여기서 시작해요</h2><p>학년을 선택하고 필요한 자료를 찾아보세요.</p></div><Link className="text-link" to="/library">전체 자료실 <ArrowRight size={16} /></Link></div>
-        <div className="grade-grid">{[1, 2, 3, 4, 5, 6].map((g, i) => <Link key={g} className={`grade-card grade-${g}`} to={`/library?grade=${g}`}><span className="grade-number">0{g}</span><span className="grade-decoration">{['◒', '✿', '◆', '✦', '◈', '◉'][i]}</span><strong>{g}학년</strong><span>지도안 찾아보기 <ArrowRight size={14} /></span></Link>)}</div>
+        <div className="grade-grid">{GRADES.map(g => <Link key={g.grade} className={`grade-card ${g.className}`} to={`/library?grade=${encodeURIComponent(g.grade)}`}><span className="grade-number">{g.numberLabel}</span><span className="grade-decoration">{g.deco}</span><strong>{g.label}</strong><span>지도안 찾아보기 <ArrowRight size={14} /></span></Link>)}</div>
         <div className="subject-row"><strong>교과로 찾기</strong><div>{SUBJECTS.map(s => <Link key={s} to={`/library?subject=${encodeURIComponent(s)}`}>{s}</Link>)}</div></div>
       </section>
       <section className="section latest"><div className="section-heading"><div><span className="overline">LESSON PLAN LIBRARY</span><h2>새로 만나는 수업 아이디어</h2><p>선생님들이 나눈 최신 교수학습과정안을 확인하세요.</p></div><Link className="text-link" to="/library">더 보기 <ArrowRight size={16} /></Link></div>
