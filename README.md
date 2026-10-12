@@ -1,6 +1,8 @@
 # 지도안 대백과
 
-Lesson Plan Encyclopedia — 초등·유아 교수학습과정안 검색, 브라우저 내 지도안 파일 분석, 관리자 검토 후 공개하는 정적 웹앱입니다.
+Lesson Plan Encyclopedia — 초등·유아 교수학습과정안을 검색하고 원본을 다운로드하는 정적 웹앱입니다.
+
+지도안 분석·제출 화면은 현재 **준비 중** 안내만 표시합니다. 기존 분석·ZIP 코드와 관리자 도구는 추후 구현을 위해 보존하며, 공개 웹앱에서는 파일을 선택하거나 제출할 수 없습니다.
 
 - 저장소: https://github.com/gmlduqzhd123-lab/lesson-plan
 - 공개 사이트: https://gmlduqzhd123-lab.github.io/lesson-plan/
