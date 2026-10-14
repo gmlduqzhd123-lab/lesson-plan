@@ -12,6 +12,7 @@ export default function BatchDownload({ visible, results, selected, onChange, on
   const [error, setError] = useState('');
   const [failures, setFailures] = useState<BatchDownloadError['failures']>([]);
   const [notice, setNotice] = useState('');
+  const [toolsOpen, setToolsOpen] = useState(false);
   useEffect(() => () => { running.current?.abort(); }, []);
   async function download() {
     if (running.current || !selected.length) return;
@@ -25,8 +26,8 @@ export default function BatchDownload({ visible, results, selected, onChange, on
       if (!controller.signal.aborted) { setError(e instanceof Error ? e.message : '다운로드하지 못했습니다.'); if (e instanceof BatchDownloadError) setFailures(e.failures); }
     } finally { running.current = null; if (!controller.signal.aborted) { setBusy(false); onBusyChange(false); setProgress(null); } }
   }
-  return <section className="batch-download" aria-label="선택 자료 다운로드" aria-busy={busy}>
-    <div className="batch-toolbar"><strong aria-live="polite">선택한 자료 {selected.length}개</strong><div className="batch-buttons">
+  return <section className={`batch-download${toolsOpen ? ' tools-open' : ''}`} aria-label="선택 자료 다운로드" aria-busy={busy}>
+    <div className="batch-toolbar"><strong aria-live="polite">선택한 자료 {selected.length}개</strong><button className="mobile-selection-tools button secondary" aria-expanded={toolsOpen} aria-controls="selection-tools" onClick={() => setToolsOpen(open => !open)}>{toolsOpen ? '선택 도구 접기' : '전체 선택·선택 도구'}</button><div id="selection-tools" className="batch-buttons">
       <button className="button secondary" disabled={busy || !visible.length} onClick={() => onChange([...new Map([...selected, ...visible].map(p => [p.id, p])).values()])}>현재 화면의 자료 전체 선택</button>
       <button className="button secondary" disabled={busy || !results.length} onClick={() => onChange([...new Map([...selected, ...results].map(p => [p.id, p])).values()])}>검색 결과 전체 선택 ({results.length}개)</button>
       <button className="button secondary" disabled={busy || !selected.length} onClick={() => onChange([])}>선택 해제</button>
@@ -37,5 +38,6 @@ export default function BatchDownload({ visible, results, selected, onChange, on
     {progress && <div role="status" className="batch-progress"><span>{progress.stage === 'files' ? `원본 확인 ${progress.completed} / ${progress.total}개` : `ZIP 생성 ${Math.round(progress.percent)}%`}</span><progress max={100} value={progress.percent} aria-label={progress.stage === 'files' ? '원본 확인 진행률' : 'ZIP 생성 진행률'} /></div>}
     {error && <div className="alert" role="alert"><p>{error}</p>{failures.length > 0 && <ul>{failures.map((f, i) => <li key={i}>{f.title} · {f.name}: {f.reason}</li>)}</ul>}</div>}
     {notice && <p role="status" className="batch-success">{notice}</p>}
+    {selected.length > 0 && <div className="mobile-download-bar" aria-label="하단 선택 자료 다운로드"><div><strong>{selected.length}개 선택</strong><small>{busy ? progress?.stage === 'zip' ? `ZIP 생성 ${Math.round(progress.percent)}%` : `원본 확인 ${progress?.completed || 0}/${selected.length}` : '원본 확인 후 다운로드'}</small></div><button className="button primary" disabled={busy} onClick={() => void download()}><Download size={17} />{busy ? '준비 중…' : selected.length > 1 ? 'ZIP 받기' : '원본 받기'}</button></div>}
   </section>;
 }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import SearchBox from '../components/SearchBox';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, BookOpen, Check, FileText, Search, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Check, FileText, ShieldCheck, Sparkles } from 'lucide-react';
 import { SUBJECTS } from '../../shared/schema.mjs';
 import { PlanCard, EmptyState, CatalogStatus } from '../components/Library';
 import { getLessonDate } from '../lib/search';
@@ -18,15 +18,14 @@ const GRADES: { grade: number | '유아'; label: string; numberLabel: string; de
 
 type Props = { plans: Plan[]; loading: boolean; error: string; retry: () => void };
 export default function Home(props: Props) {
-  const [query, setQuery] = useState('');
   const navigate = useNavigate();
-  const search = () => navigate(`/library?q=${encodeURIComponent(query)}`);
+
   return <>
     <section className="hero"><div className="container hero-inner"><div className="hero-copy">
       <span className="eyebrow"><span className="tiny-dot" /> 선생님을 위한 수업 자료 공간</span>
       <h1>선생님의 수업 준비를<br /><span>더 가볍게</span></h1>
       <p>학년과 교과, 단원만 선택하세요.<br />필요한 교수학습과정안을 한눈에 찾아보세요.</p>
-      <form className="searchbox hero-search" onSubmit={e => { e.preventDefault(); search(); }}><Search size={23} /><input aria-label="지도안 통합 검색" value={query} onChange={e => setQuery(e.target.value)} placeholder="어떤 수업을 준비하고 계세요?" /><button aria-label="검색하기" type="submit"><ArrowRight size={21} /></button></form>
+      <SearchBox plans={props.plans} onSearch={query => navigate(`/library?q=${encodeURIComponent(query)}`)} label="지도안 통합 검색" placeholder="어떤 수업을 준비하고 계세요?" className="hero-search" />
       <div className="search-hints"><span>이렇게 찾아보세요</span>{['5학년 체육', '분수', '놀이중심', '토의·토론', '성취기준'].map(s => <button key={s} onClick={() => navigate(`/library?q=${encodeURIComponent(s)}`)}>{s}</button>)}</div>
     </div>
     <div className="hero-art" aria-hidden="true"><div className="art-orbit" /><span className="art-spark spark-one">✦</span><span className="art-spark spark-two">✦</span><div className="floating-label"><ShieldCheck size={18} /> 안전하게 나누는 수업</div><div className="notebook"><div className="binding">{Array.from({ length: 6 }, (_, i) => <i key={i} />)}</div><span className="notebook-label">LESSON NOTE</span><div className="book-symbol"><BookOpen size={39} strokeWidth={1.6} /></div><strong>함께 만드는<br />좋은 수업</strong><div className="notebook-line" /><div className="notebook-line short" /><span className="notebook-dot" /></div><div className="small-note"><Check size={17} /><span>수업 준비 완료!</span><div /><div /></div><div className="mint-dot" /></div>
