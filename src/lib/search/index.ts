@@ -1,6 +1,6 @@
 import { normalize } from '../../../shared/schema.mjs';
 import type { Plan } from '../../types';
-export type Filters = { query: string; grade: string; subject: string; unit: string; sort: string; materialType?: string; teachingModel?: string };
+export type Filters = { query: string; grade: string; subject: string; unit: string; sort: string; materialType?: string; teachingModel?: string; standard?: string };
 export const matchesGrade = (p: Plan, grade: string) => !grade || (grade === '유아' ? p.educationLevel === '유아' : p.grades.includes(Number(grade)));
 export function canonicalizeQuery(query: string) {
   const grades: Record<string, string> = { 일: '1', 이: '2', 삼: '3', 사: '4', 오: '5', 육: '6', 한: '1', 두: '2', 세: '3', 네: '4', 다섯: '5', 여섯: '6' };
@@ -35,8 +35,8 @@ export function searchSuggestions(plans: Plan[], query: string) {
 
 export function relaxedSearches(plans: Plan[], filters: Filters) {
   const suggestions: { label: string; filters: Filters; count: number }[] = [];
-  const labels: Record<string, string> = { grade: '학년', subject: '교과', unit: '단원', teachingModel: '수업 모형', materialType: '자료 유형' };
-  for (const field of ['unit', 'teachingModel', 'materialType', 'grade', 'subject'] as const) {
+  const labels: Record<string, string> = { standard: '성취기준', grade: '학년', subject: '교과', unit: '단원', teachingModel: '수업 모형', materialType: '자료 유형' };
+  for (const field of ['standard', 'unit', 'teachingModel', 'materialType', 'grade', 'subject'] as const) {
     if (!filters[field]) continue;
     const next = { ...filters, [field]: '', ...(['grade', 'subject'].includes(field) ? { unit: '' } : {}) };
     const count = searchPlans(plans, next).length;
@@ -65,15 +65,57 @@ export function getLessonDate(p: Plan): string {
   return p.publishedAt ? p.publishedAt.slice(0, 10) : '2020-01-01';
 }
 
+export type StandardStat = {
+  code: string;
+  count: number;
+  subject: string;
+  sampleTopic: string;
+};
+
+export function extractStandardStats(
+  plans: Plan[],
+  scope: { grade?: string; subject?: string; filterText?: string } = {},
+): StandardStat[] {
+  const map = new Map<string, StandardStat>();
+  for (const p of plans) {
+    if (scope.grade && !matchesGrade(p, scope.grade)) continue;
+    if (scope.subject && p.subject !== scope.subject) continue;
+    for (const rawCode of (p.standards || [])) {
+      const code = rawCode.trim();
+      if (!code) continue;
+      const prev = map.get(code);
+      if (prev) {
+        prev.count += 1;
+        if (!prev.sampleTopic && (p.topic || p.unit)) prev.sampleTopic = p.topic || p.unit;
+      } else {
+        map.set(code, {
+          code,
+          count: 1,
+          subject: p.subject,
+          sampleTopic: p.topic || p.unit || p.title,
+        });
+      }
+    }
+  }
+  const needle = normalize(scope.filterText || '');
+  const list = [...map.values()].filter(
+    item => !needle || normalize(`${item.code} ${item.subject} ${item.sampleTopic}`).includes(needle),
+  );
+  return list.sort((a, b) => b.count - a.count || a.code.localeCompare(b.code, 'ko'));
+}
+
 export function searchPlans(plans: Plan[], f: Filters) {
   const query = canonicalizeQuery(f.query);
   const terms = query.split(/\s+/).filter(Boolean).map(normalize);
   const compact = normalize(query);
   const modelCore = f.teachingModel ? normalize(f.teachingModel).replace(/(학습|수업|모형|법)+$/g, '') : '';
   const result = plans.filter(p => {
-    const hay = normalize([p.title, p.grades.map(g => `${g}학년`).join(' '), p.gradeBand, p.educationLevel, p.materialType, p.subject, p.teachingModel, p.unit, p.topic, p.author, ...p.objectives, ...p.standards, ...p.keywords].join(' '));
+    const hay = normalize([p.title, p.grades.map(g => `${g}학년`).join(' '), p.gradeBand, p.educationLevel, p.materialType, p.subject, p.teachingModel, p.unit, p.topic, p.author, ...(p.objectives || []), ...(p.standards || []), ...(p.keywords || [])].join(' '));
     const matchesModel = !f.teachingModel || p.teachingModel === f.teachingModel || (modelCore && (normalize(p.teachingModel).includes(modelCore) || hay.includes(modelCore)));
-    return (!terms.length || hay.includes(compact) || terms.every(t => hay.includes(t))) && matchesGrade(p, f.grade) && (!f.subject || p.subject === f.subject) && (!f.unit || p.normalizedUnit === normalize(f.unit)) && (!f.materialType || p.materialType === f.materialType) && matchesModel;
+    const matchesStandard = !f.standard || (p.standards || []).includes(f.standard);
+    return (!terms.length || hay.includes(compact) || terms.every(t => hay.includes(t))) && matchesGrade(p, f.grade) && (!f.subject || p.subject === f.subject) && (!f.unit || p.normalizedUnit === normalize(f.unit)) && (!f.materialType || p.materialType === f.materialType) && matchesModel && matchesStandard;
   });
   return result.sort((a, b) => f.sort === 'title' ? a.title.localeCompare(b.title, 'ko') : f.sort === 'grade' ? (a.grades[0] ?? 9) - (b.grades[0] ?? 9) || a.title.localeCompare(b.title, 'ko') : f.sort === 'subject' ? a.subject.localeCompare(b.subject, 'ko') || a.title.localeCompare(b.title, 'ko') : getLessonDate(b).localeCompare(getLessonDate(a)) || b.publishedAt.localeCompare(a.publishedAt));
 }
+
+

@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
-import { ArrowRight, BookOpen, Check, Eye, EyeOff, KeyRound, LockKeyhole } from 'lucide-react';
+import { createContext, useContext, useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { ArrowRight, BookOpen, Check, Eye, EyeOff, KeyRound, LockKeyhole, X } from 'lucide-react';
 import type { useCatalog } from '../hooks/useCatalog';
 import { hasAccessSession, saveAccessSession, verifyAccessPassword } from '../lib/access';
 import '../access-gate.css';
@@ -10,8 +10,26 @@ const notices = [
   { title: '수업 및 지도안 작성 참고용으로만 사용', paragraphs: ['자료는 오로지 수업 목적 및 공개 수업 지도안 작성 시 참고 자료로만 사용해야 합니다.', '선생님의 학급과 학생, 교육과정에 맞게 수업을 준비하는 데 참고해주세요. 참고용으로 제공된 지도안을 자신의 결과물인 것처럼 그대로 제출하거나 발표하지 마세요.'] },
 ];
 
-export default function AccessGate({ catalog, children }: { catalog: ReturnType<typeof useCatalog>; children: ReactNode }) {
+export type AccessContextValue = {
+  admitted: boolean;
+  requireAccess: (onAdmitted?: () => void) => boolean;
+  openAccessModal: () => void;
+};
+
+const AccessContext = createContext<AccessContextValue>({
+  admitted: true,
+  requireAccess: (onAdmitted?: () => void) => { onAdmitted?.(); return true; },
+  openAccessModal: () => {},
+});
+
+export function useAccessGate() {
+  return useContext(AccessContext);
+}
+
+export default function AccessGate({ catalog, children, allowBrowse = false }: { catalog: ReturnType<typeof useCatalog>; children: ReactNode; allowBrowse?: boolean }) {
   const [admitted, setAdmitted] = useState(hasAccessSession);
+  const [browsing, setBrowsing] = useState(allowBrowse);
+  const [modalOpen, setModalOpen] = useState(false);
   const [tab, setTab] = useState<'entry' | 'notice'>('entry');
   const [readEnd, setReadEnd] = useState(false);
   const [agreed, setAgreed] = useState(false);
@@ -22,6 +40,8 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
   const [error, setError] = useState('');
   const reader = useRef<HTMLDivElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
+  const pendingAction = useRef<(() => void) | undefined>(undefined);
+
   const checkEnd = () => {
     const el = reader.current;
     if (el && el.clientHeight > 0 && el.scrollHeight - el.scrollTop - el.clientHeight <= 4) setReadEnd(true);
@@ -34,8 +54,24 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
     const observer = new ResizeObserver(checkEnd);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [tab]);
-  useEffect(() => { if (confirmed && tab === 'entry') passwordInput.current?.focus(); }, [confirmed, tab]);
+  }, [tab, modalOpen]);
+  useEffect(() => { if (confirmed && tab === 'entry') passwordInput.current?.focus(); }, [confirmed, tab, modalOpen]);
+
+  const openAccessModal = () => {
+    setBrowsing(true);
+    setModalOpen(true);
+  };
+
+  const requireAccess = (onAdmitted?: () => void) => {
+    if (admitted) {
+      onAdmitted?.();
+      return true;
+    }
+    pendingAction.current = onAdmitted;
+    setBrowsing(true);
+    setModalOpen(true);
+    return false;
+  };
 
   async function enter(event: FormEvent) {
     event.preventDefault();
@@ -43,14 +79,23 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
     setBusy(true); setError('');
     try {
       if (await verifyAccessPassword(password)) {
-        saveAccessSession(); setPassword(''); setAdmitted(true);
+        saveAccessSession();
+        setPassword('');
+        setAdmitted(true);
+        setModalOpen(false);
+        const action = pendingAction.current;
+        pendingAction.current = undefined;
+        if (action) setTimeout(() => action(), 0);
       } else { setError('비밀번호가 맞지 않습니다. 다시 확인해주세요.'); passwordInput.current?.focus(); }
     } catch { setError('비밀번호 확인을 완료하지 못했습니다. 브라우저를 확인하고 다시 시도해주세요.'); }
     finally { setBusy(false); }
   }
 
-  if (admitted) return children;
-  return <main className="access-page"><div className="access-card">
+  const contextValue: AccessContextValue = { admitted, requireAccess, openAccessModal };
+
+  if (admitted) return <AccessContext.Provider value={contextValue}>{children}</AccessContext.Provider>;
+
+  const gateCard = <div className="access-card">
     <section className="access-intro" aria-label="지도안 대백과 소개">
       <div className="access-brand"><span><BookOpen size={24} /></span><div><strong>지도안 대백과</strong><small>LESSON PLAN ENCYCLOPEDIA</small></div></div>
       <div className="access-invitation"><span className="access-eyebrow">선생님을 위한 작은 서재</span><h1>선생님의 수업에<br /><em>새로운 영감을</em></h1><p>차곡차곡 모은 지도안으로<br />내일의 수업을 준비해보세요.</p></div>
@@ -60,6 +105,7 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
       </div><p className="access-signature">엽쌤과 함께 만드는 수업 자료실</p>
     </section>
     <section className="access-content" aria-label="자료실 입장">
+      {browsing && <div className="access-modal-top"><span className="access-modal-badge">다운로드·복사 인증</span><button type="button" className="access-close-btn" aria-label="인증 창 닫고 계속 둘러보기" onClick={() => { pendingAction.current = undefined; setModalOpen(false); }}><X size={18} /> 닫기</button></div>}
       <div className="access-tabs" role="tablist" aria-label="입장 안내" onKeyDown={event => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
         event.preventDefault();
@@ -78,6 +124,7 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
           <p id="access-help" className="access-help">비밀번호는 엽쌤에게 직접 문의해주세요</p><p id="access-error" className="access-error" role="alert">{error}</p>
           <button className="access-primary" disabled={!confirmed || !password || busy} type="submit">{busy ? '확인 중…' : '자료실 입장하기'}<ArrowRight size={18} /></button>
         </form>
+        {!browsing && <button type="button" className="access-browse-first" onClick={() => setBrowsing(true)}>먼저 자료 목록 둘러보기 <ArrowRight size={15} /></button>}
       </div>
       <div id="access-notice" role="tabpanel" aria-labelledby="access-tab-notice" hidden={tab !== 'notice'}>
         <h2 className="access-notice-heading">유의 사항</h2><p className="access-description">아래 내용을 끝까지 읽고 이용 약속에 동의해주세요.</p>
@@ -90,5 +137,15 @@ export default function AccessGate({ catalog, children }: { catalog: ReturnType<
         <button className="access-primary" disabled={!readEnd || !agreed} onClick={() => { if (!readEnd || !agreed) return; setConfirmed(true); setTab('entry'); }}>확인하고 비밀번호 입력하기<ArrowRight size={18} /></button>
       </div>
     </section>
-  </div></main>;
+  </div>;
+
+  if (browsing) {
+    return <AccessContext.Provider value={contextValue}>
+      {children}
+      {modalOpen && <div className="access-modal-overlay" role="dialog" aria-modal="true" aria-label="자료실 이용 인증" onClick={e => { if (e.target === e.currentTarget) { pendingAction.current = undefined; setModalOpen(false); } }}>{gateCard}</div>}
+    </AccessContext.Provider>;
+  }
+
+  return <main className="access-page">{gateCard}</main>;
 }
+

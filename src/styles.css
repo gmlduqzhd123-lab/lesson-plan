@@ -28,3 +28,89 @@ fieldset.editor{min-width:0;margin-inline:0;width:100%}
 .scroll-top-btn{position:fixed;bottom:28px;right:28px;z-index:40;display:inline-flex;align-items:center;gap:6px;padding:11px 18px;background:#fff;color:#3b5a82;border:1px solid #ccdcee;border-radius:30px;box-shadow:0 6px 20px #25374d26;font-size:13px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s,background-color .2s}
 .scroll-top-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #25374d38;background:#f8fbff;color:var(--blue)}
 @media(max-width:760px){.scroll-top-btn{bottom:20px;right:20px;padding:9px 14px;font-size:12px}}
+
+/* Idea #1: Header access status chip */
+.access-status{display:inline-flex;align-items:center;gap:5px;border-color:#cfe0f5;background:#f4f8ff;color:#2868db}
+.access-status.is-unlocked{border-color:#a7f3d0;background:#ecfdf5;color:#047857;cursor:default}
+
+/* Idea #7: Achievement Standard Explorer & Detail Standard Chips */
+.standard-explorer{margin-top:14px;padding:16px 18px;border:1px solid #dce7f5;border-radius:13px;background:#f8fbff}
+.standard-explorer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.standard-explorer-head>div:first-child{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:#345073}
+.standard-explorer-head strong{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#203a58}
+.standard-explorer-head span{font-size:12px;color:#68809c}
+.standard-explorer-head b{color:var(--blue)}
+.standard-explorer-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.standard-filter-input{width:230px;max-width:100%;height:34px;padding:6px 10px;font-size:12px;border-radius:7px}
+.standard-toggle-btn{font-size:11px;font-weight:650;color:var(--blue);background:#fff;border:1px solid #cbddf4;padding:6px 11px;border-radius:7px}
+.standard-toggle-btn:hover{background:#eef5ff}
+.standard-badge-cloud{display:flex;flex-wrap:wrap;gap:7px}
+.standard-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:8px;border:1px solid #d8e4f3;background:#fff;font-size:11px;color:#3c5778;transition:all .15s}
+.standard-chip:hover{border-color:#8cb5ec;background:#f0f6ff;color:var(--blue)}
+.standard-chip.is-active{border-color:var(--blue);background:var(--blue);color:#fff}
+.standard-code{font-weight:650}
+.standard-count{font-size:10px;padding:1px 6px;border-radius:10px;background:#edf4ff;color:#4872ad}
+.standard-chip.is-active .standard-count{background:#ffffff29;color:#fff}
+.standard-compare-banner{margin-top:12px;padding:12px 14px;border-radius:10px;background:#eef5ff;border:1px solid #cbe0fa;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#2c4d75}
+.standard-compare-banner strong{display:block;font-size:13px;color:var(--blue);margin-bottom:2px}
+.standard-compare-banner .button{padding:7px 12px;min-height:34px;font-size:11px}
+.detail-standard-badges{display:flex;flex-wrap:wrap;gap:8px}
+.detail-standard-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:8px;border:1px solid #cfe0f6;background:#f3f8ff;color:#2b579a;font-size:12px;transition:all .15s}
+.detail-standard-chip:hover{background:#e5f0ff;border-color:#8fb8ee;transform:translateY(-1px)}
+.detail-standard-chip span{font-size:11px;color:#587bb0}
+
+/* Idea #3: Structured Lesson Flow Viewer (Intro - Development - Wrapup) */
+.preview-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.preview-copy-btn.primary-copy{background:#eef5ff;border-color:#c4dbf7;color:var(--blue)}
+.preview-copy-btn.primary-copy:hover{background:#dfeeff}
+.stage-cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+.stage-card{border:1px solid #e1eaf4;border-radius:12px;padding:16px 18px;background:#fbfdff}
+.stage-card.stage-intro{border-left:4px solid #3b82f6}
+.stage-card.stage-development{border-left:4px solid #10b981}
+.stage-card.stage-wrapup{border-left:4px solid #8b5cf6}
+.stage-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.stage-title-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.stage-title-group strong{font-size:14px;color:#243850}
+.stage-title-group small{font-size:11px;color:#7488a1;background:#f1f5f9;padding:2px 8px;border-radius:12px}
+.stage-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px}
+.badge-intro{background:#eff6ff;color:#1d4ed8}
+.badge-development{background:#ecfdf5;color:#047857}
+.badge-wrapup{background:#f5f3ff;color:#6d28d9}
+.stage-copy-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;font-size:11px;font-weight:600;border-radius:7px;border:1px solid #dce5f2;background:#fff;color:#4f6b8a}
+.stage-copy-btn:hover{border-color:#9bc0f0;color:var(--blue);background:#f4f9ff}
+.stage-copy-btn.copied{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+.stage-lines{margin:0;padding-left:18px;color:#4a607a;font-size:13px;line-height:1.75}
+.stage-lines li+li{margin-top:5px}
+
+/* Idea #4: AI Lesson Reconstruction Prompt Generator */
+.ai-prompt-section{background:linear-gradient(180deg,#f9fbff 0%,#fff 100%)}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#6d28d9;background:#f3e8ff;padding:3px 9px;border-radius:20px;margin-bottom:6px}
+.ai-copy-btn.copied{background:#059669}
+.ai-options-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.ai-options-grid label{display:block;font-size:11px;font-weight:600;color:#5b718d}
+.ai-options-grid input,.ai-options-grid select{margin-top:6px;font-size:12px;padding:8px 10px}
+.ai-prompt-footer{margin-top:14px}
+.ai-prompt-box{margin-top:10px!important;max-height:320px!important;font-size:12px!important;background:#f4f7fb!important}
+
+/* Idea #10: YsSchool Edutech Tools Deep-Link Integration */
+.ys-eco-badge{display:inline-block;font-size:11px;font-weight:700;color:#047857;background:#ecfdf5;border:1px solid #a7f3d0;padding:3px 9px;border-radius:20px;margin-bottom:6px}
+.ys-tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.ys-tool-card{display:flex;flex-direction:column;border:1px solid #dce6f3;border-radius:12px;padding:16px;background:#fff;transition:transform .18s,border-color .18s,box-shadow .18s;min-width:0}
+.ys-tool-card:hover{transform:translateY(-3px);border-color:#7fb0ee;box-shadow:0 10px 24px #2868db12}
+.ys-tool-top{display:flex;align-items:center;gap:7px;margin-bottom:10px}
+.ys-tool-emoji{font-size:20px;line-height:1}
+.ys-tool-badge{font-size:10px;font-weight:650;padding:2px 7px;border-radius:6px;background:#eef5ff;color:#2b63c2}
+.ys-tool-arrow{margin-left:auto;color:#829ab8}
+.ys-tool-card strong{font-size:14px;color:#223750;margin-bottom:6px;overflow-wrap:anywhere}
+.ys-tool-card p{font-size:12px;color:#687e97;line-height:1.6;margin-bottom:10px;flex:1}
+.ys-tool-tip{font-size:11px;color:#3d628c;background:#f4f8fd;border-radius:8px;padding:8px 10px;line-height:1.5}
+
+@media(max-width:760px){
+  .ai-options-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ys-tools-grid{grid-template-columns:1fr}
+  .standard-filter-input{width:100%}
+}
+@media(max-width:390px){
+  .ai-options-grid{grid-template-columns:1fr}
+}
+
